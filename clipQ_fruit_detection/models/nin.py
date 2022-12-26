@@ -1,8 +1,8 @@
 import torch.nn as nn
 import torch
 import os
-from Qfile import fileW2, fileW8, fileW32
-from chQfile import ch_fileW2, ch_fileW8, ch_fileW32, out_ch_fileW8
+from models.Qfile import fileW2, fileW8, fileW32
+from models.chQfile import ch_fileW2, ch_fileW8, ch_fileW32, out_ch_fileW8
 import numpy
 
 
