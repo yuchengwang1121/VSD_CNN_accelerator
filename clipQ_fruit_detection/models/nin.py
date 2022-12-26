@@ -1,6 +1,5 @@
 import torch.nn as nn
 import torch
-import torch.nn.functional as F
 import os
 from Qfile import fileW2, fileW8, fileW32
 from chQfile import ch_fileW2, ch_fileW8, ch_fileW32, out_ch_fileW8
@@ -48,7 +47,7 @@ class QConv2d(nn.Module):
         self.stride = stride
         self.padding = padding
         self.dropout_ratio = dropout
-        self.layer = layer
+        self.layer = layer              # the number of its layer
         self.full = full
         self.bn = nn.BatchNorm2d(
             input_channels, eps=1e-4, momentum=0.1, affine=True)
@@ -102,7 +101,7 @@ class QMaxPool2d(nn.Module):
 
     def forward(self, x):
         if self.w:
-            # for write input.hex
+            # for write input.hex in pool i, given by format(i)
             if not os.path.exists('./H_data/pool{:d}/In8.hex'.format(int(self.layer)-1)):
                 out_ch_fileW8(x[0], './H_data/pool{:d}/In8.hex'.format(int(self.layer)-1), 5)
 
@@ -119,12 +118,32 @@ class Net(nn.Module):
     def __init__(self, f, write):
         super(Net, self).__init__()
         self.QCNN = nn.Sequential(
-            QConv2d(3,  60, kernel_size=3, stride=1,
+            QConv2d(3, 96, kernel_size=3, stride=1,
                     padding=1, layer=1, full=f, w=write),
-            QConv2d(60, 2, kernel_size=1, stride=1,
+            QConv2d(96, 160, kernel_size=1, stride=1,
                     padding=0, layer=2, full=f, w=write),
-            QMaxPool2d(kernel_size=32, stride=2,
-                    padding=0, layer=1, w=write)
+            QConv2d(160, 192, kernel_size=1, stride=1,
+                    padding=0, layer=3, full=f, w=write),
+            QMaxPool2d(kernel_size=2, stride=2,
+                    padding=0, layer=1, w=write),
+
+            QConv2d(192, 96, kernel_size=3, stride=1,
+                    padding=1, layer=4, full=f, w=write),
+            QConv2d(96, 192, kernel_size=1, stride=1,
+                    padding=0, layer=5, full=f, w=write),
+            QConv2d(192, 192, kernel_size=1, stride=1,
+                    padding=0, layer=6, full=f, w=write),
+            QMaxPool2d(kernel_size=2, stride=2,
+                    padding=0, layer=2, w=write),
+
+            QConv2d(192, 384, kernel_size=3, stride=1,
+                    padding=1, layer=7, full=f, w=write),
+            QConv2d(384, 192, kernel_size=1, stride=1,
+                    padding=0, layer=8, full=f, w=write),
+            QConv2d(192, 33, kernel_size=1, stride=1,
+                    padding=0, layer=9, full=f, w=write),
+            QMaxPool2d(kernel_size=25  , stride=2,
+                    padding=0, layer=3, w=write),
         )
 
     def forward(self, x):
