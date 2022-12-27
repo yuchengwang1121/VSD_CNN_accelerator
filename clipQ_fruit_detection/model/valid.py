@@ -1,8 +1,7 @@
 from torch.autograd import Variable
 import torch
 
-def valid(full, model, bin_op, validloader, criterion):
-    global best_acc
+def valid(full, model, bin_op, validloader, criterion, best_acc):
     model.eval()
     valid_loss = 0
     correct = 0
@@ -40,4 +39,4 @@ def save_state(model, best_acc):
         if 'module' in key:
             state['state_dict'][key.replace('module.', '')] = \
                 state['state_dict'].pop(key)
-    torch.save(state, 'models/nin_p.pth.tar')
+    torch.save(state, 'NIN/nin_p.pth.tar')

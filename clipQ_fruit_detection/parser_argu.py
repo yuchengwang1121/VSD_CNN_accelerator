@@ -9,7 +9,7 @@ def init_parse(parser) :        # modify the argument here
     parser.add_argument('--opt', action='store', default='Adam',
                         help='the optimizer')
     # learning rate for optimizer
-    parser.add_argument('--lr', action='store', default='0.1',
+    parser.add_argument('--lr', action='store', default='0.001',
                         help='the intial learning rate')
     # load trained model's dict
     parser.add_argument('--pretrained', action='store', default=None,
@@ -18,7 +18,7 @@ def init_parse(parser) :        # modify the argument here
     parser.add_argument('--full', action='store', default='0',
                         help='full precision or not')
     # Total epoch the model train & validate
-    parser.add_argument('--epoch', action='store', default='300',
+    parser.add_argument('--epoch', action='store', default='30',
                         help='training epoch')
     # write the model's parameter into .HEX file
     parser.add_argument('--write', action='store_true',

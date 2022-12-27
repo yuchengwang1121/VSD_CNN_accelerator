@@ -99,6 +99,7 @@ class QMaxPool2d(nn.Module):
         self.MaxPool = nn.MaxPool2d(kernel_size=kernel_size, stride=stride, padding=padding)
 
     def forward(self, x):
+        # print("Now in Pool's forwarding with x's size ", x.size())
         if self.w:
             # for write input.hex in pool i, given by format(i)
             if not os.path.exists('./H_data/pool{:d}/In8.hex'.format(int(self.layer)-1)):
@@ -117,6 +118,7 @@ class Net(nn.Module):
     def __init__(self, f, write):
         super(Net, self).__init__()
         self.QCNN = nn.Sequential(
+            
             QConv2d(3, 96, kernel_size=3, stride=1,
                     padding=1, layer=1, full=f, w=write),
             QConv2d(96, 160, kernel_size=1, stride=1,
@@ -134,15 +136,15 @@ class Net(nn.Module):
                     padding=0, layer=6, full=f, w=write),
             QMaxPool2d(kernel_size=2, stride=2,
                     padding=0, layer=2, w=write),
-
+            
             QConv2d(192, 384, kernel_size=3, stride=1,
                     padding=1, layer=7, full=f, w=write),
             QConv2d(384, 192, kernel_size=1, stride=1,
                     padding=0, layer=8, full=f, w=write),
             QConv2d(192, 33, kernel_size=1, stride=1,
                     padding=0, layer=9, full=f, w=write),
-            QMaxPool2d(kernel_size=25  , stride=2,
-                    padding=0, layer=3, w=write),
+            QMaxPool2d(kernel_size=8 , stride=2,
+                    padding=0, layer=3, w=write)
         )
 
     def forward(self, x):

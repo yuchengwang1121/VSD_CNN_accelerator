@@ -11,6 +11,8 @@ def train(epoch, full, model, bin_op, trainloader, criterion, optimizer):
         data, target = Variable(data.cuda()), Variable(target.cuda())
         optimizer.zero_grad()
         output = model(data)
+        print("the out is ", output)
+        print("the target is ", target)
 
         # backwarding
         loss = criterion(output, target)
@@ -21,7 +23,7 @@ def train(epoch, full, model, bin_op, trainloader, criterion, optimizer):
             bin_op.restore()
 
         optimizer.step()
-        if batch_idx % 100 == 0:
+        if batch_idx % 10 == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}\tLR: {}'.format(
                 epoch, batch_idx * len(data), len(trainloader.dataset),
                 100. * batch_idx / len(trainloader), loss.data.item(),

@@ -10,7 +10,7 @@ def get_dataset(type):
                                               tv.transforms.Resize([32,32]),
                                               tv.transforms.Normalize((.5, .5, .5), (.5, .5, .5))])
     dataset = tv.datasets.ImageFolder(train_path, transform=transform_img)
-    train_set_size = int(len(dataset) * 0.8)
+    train_set_size = int(len(dataset) * 0.85)
     valid_set_size = len(dataset) - train_set_size
 
     # split dataset into train & valid ImgFolder (5306 & 1327)
