@@ -1,10 +1,15 @@
 from torch.autograd import Variable
 import torch
 
-def valid(full, model, bin_op, validloader, criterion, best_acc):
+
+
+def valid(full, model, bin_op, validloader, criterion, epoch):
+    global best_acc
     model.eval()
     valid_loss = 0
     correct = 0
+    if epoch==1:
+        best_acc = 0
     if full == 0:
         bin_op.NbitClipQ()
     for data, target in validloader:
@@ -17,12 +22,14 @@ def valid(full, model, bin_op, validloader, criterion, best_acc):
     if full == 0:
         bin_op.restore()
     acc = 100. * float(correct) / len(validloader.dataset)
-
+    # print("the acc is {} and the best is {}".format(acc, best_acc))
     if acc > best_acc:
         best_acc = acc
         save_state(model, best_acc)
+    # print("After saving the acc is {} and the best is {}".format(acc, best_acc))
 
     valid_loss /= len(validloader.dataset)
+    print('\nThe epoch is: {}'.format(epoch))
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
         valid_loss * 128., correct, len(validloader.dataset),
         100. * float(correct) / len(validloader.dataset)))

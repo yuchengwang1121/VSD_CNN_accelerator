@@ -59,14 +59,18 @@ class QConv2d(nn.Module):
         self.relu = nn.ReLU(inplace=True)
 
     def forward(self, x):
-        # x = self.bn(x)
+        x = self.bn(x)
 
         if self.full == 0:
             x = NbitActive.apply(x)
 
         if self.w:
+            print(os.listdir())
+            print(os.getcwd())
+            print(os.path)
             # for write input.hex
             if not os.path.exists('./H_data/conv{:d}/In8.hex'.format(int(self.layer)-1)):
+                # os.makedirs('./H_data/conv{:d}/In8.hex'.format(int(self.layer)-1))
                 ch_fileW8(x[0], './H_data/conv{:d}/In8.hex'.format(int(self.layer)-1), 5)
 
         if self.dropout_ratio != 0:
@@ -77,6 +81,7 @@ class QConv2d(nn.Module):
         if self.w:
             # for write bias.hex
             if not os.path.exists('./H_data/conv{:d}/Bias32.hex'.format(int(self.layer)-1)):
+                # os.makedirs('./H_data/conv{:d}/Bias32.hex'.format(int(self.layer)-1))
                 fileW32(self.conv.bias.data, './H_data/conv{:d}/Bias32.hex'.format(int(self.layer)-1), 10)
 
         x = self.relu(x)
@@ -84,6 +89,7 @@ class QConv2d(nn.Module):
         if self.w:
             # for write output.hex
             if not os.path.exists('./H_data/conv{:d}/Out8.hex'.format(int(self.layer)-1)):
+                # os.makedirs('./H_data/conv{:d}/Out8.hex'.format(int(self.layer)-1))
                 out_ch_fileW8(x[0], './H_data/conv{:d}/Out8.hex'.format(int(self.layer)-1), 5)
 
         return x
@@ -103,6 +109,7 @@ class QMaxPool2d(nn.Module):
         if self.w:
             # for write input.hex in pool i, given by format(i)
             if not os.path.exists('./H_data/pool{:d}/In8.hex'.format(int(self.layer)-1)):
+                # os.makedirs('./H_data/pool{:d}/In8.hex'.format(int(self.layer)-1))
                 out_ch_fileW8(x[0], './H_data/pool{:d}/In8.hex'.format(int(self.layer)-1), 5)
 
         x = self.MaxPool(x)
@@ -110,6 +117,7 @@ class QMaxPool2d(nn.Module):
         if self.w:
             # for write Output.hex
             if not os.path.exists('./H_data/pool{:d}/Out8.hex'.format(int(self.layer)-1)):
+                # os.makedirs('./H_data/pool{:d}/Out8.hex'.format(int(self.layer)-1))
                 out_ch_fileW8(x[0], './H_data/pool{:d}/Out8.hex'.format(int(self.layer)-1), 5)
         return x
 
@@ -123,28 +131,31 @@ class Net(nn.Module):
                     padding=1, layer=1, full=f, w=write),
             QConv2d(96, 160, kernel_size=1, stride=1,
                     padding=0, layer=2, full=f, w=write),
-            QConv2d(160, 192, kernel_size=1, stride=1,
+            QConv2d(160, 33, kernel_size=1, stride=1,
                     padding=0, layer=3, full=f, w=write),
-            QMaxPool2d(kernel_size=2, stride=2,
-                    padding=0, layer=1, w=write),
+            # QMaxPool2d(kernel_size=2, stride=2,
+            #         padding=0, layer=1, w=write),
+            # nn.Dropout(0.5),
 
-            QConv2d(192, 96, kernel_size=3, stride=1,
-                    padding=1, layer=4, full=f, w=write),
-            QConv2d(96, 192, kernel_size=1, stride=1,
-                    padding=0, layer=5, full=f, w=write),
-            QConv2d(192, 192, kernel_size=1, stride=1,
-                    padding=0, layer=6, full=f, w=write),
-            QMaxPool2d(kernel_size=2, stride=2,
-                    padding=0, layer=2, w=write),
-            
-            QConv2d(192, 384, kernel_size=3, stride=1,
-                    padding=1, layer=7, full=f, w=write),
-            QConv2d(384, 192, kernel_size=1, stride=1,
-                    padding=0, layer=8, full=f, w=write),
-            QConv2d(192, 33, kernel_size=1, stride=1,
-                    padding=0, layer=9, full=f, w=write),
-            QMaxPool2d(kernel_size=8 , stride=2,
-                    padding=0, layer=3, w=write)
+            # QConv2d(192, 96, kernel_size=3, stride=1,
+            #         padding=1, layer=4, full=f, w=write),
+            # QConv2d(96, 192, kernel_size=1, stride=1,
+            #         padding=0, layer=5, full=f, w=write),
+            # QConv2d(192, 192, kernel_size=1, stride=1,
+            #         padding=0, layer=6, full=f, w=write),
+            # QMaxPool2d(kernel_size=2, stride=2,
+            #         padding=0, layer=2, w=write),
+            # nn.Dropout(0.5),
+
+            # QConv2d(192, 384, kernel_size=3, stride=1,
+            #         padding=1, layer=7, full=f, w=write),
+            # QConv2d(384, 192, kernel_size=1, stride=1,
+            #         padding=0, layer=8, full=f, w=write),
+            # QConv2d(192, 33, kernel_size=1, stride=1,
+            #         padding=0, layer=9, full=f, w=write),
+            QMaxPool2d(kernel_size=32 , stride=1,
+                    padding=0, layer=1, w=write)
+            # cause use nn.Crossentropy, thus not need Dropout
         )
 
     def forward(self, x):
@@ -152,6 +163,7 @@ class Net(nn.Module):
             if isinstance(m, nn.BatchNorm2d) or isinstance(m, nn.BatchNorm1d):
                 if hasattr(m.weight, 'data'):
                     m.weight.data.clamp_(min=0.01)
+        # print("the x before model ", x[0])        # [64. 3. 32, 32]
         x = self.QCNN(x)
-        x = x.view(x.size(0), -1)
+        x = x.view(x.size(0), -1)                   # [64, 33]
         return x

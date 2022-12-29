@@ -77,9 +77,9 @@ if __name__ == '__main__':
         params += [{'params': [value], 'lr': base_lr,
                     'weight_decay':0.00001}]
     if args.opt == 'Adam':
-        optimizer = optim.Adam(params, lr=0.10, weight_decay=0.00001)
+        optimizer = optim.Adam(params, lr=0.001, weight_decay=0.00001)
     else:
-        optimizer = optim.SGD(params, lr=0.10, weight_decay=0.00001)
+        optimizer = optim.SGD(params, lr=0.001, weight_decay=0.00001)
 
     criterion = nn.CrossEntropyLoss()
 
@@ -108,4 +108,5 @@ if __name__ == '__main__':
     for epoch in range(1, max_ep):
         adjust_learning_rate(optimizer, epoch, max_ep)
         train(epoch, full_p, model, bin_op, train_loader, criterion, optimizer)
-        valid(full_p, model, bin_op, valid_loader, criterion, best_acc)
+        valid(full_p, model, bin_op, valid_loader, criterion, epoch)
+        

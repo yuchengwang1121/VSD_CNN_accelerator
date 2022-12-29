@@ -9,13 +9,13 @@ def train(epoch, full, model, bin_op, trainloader, criterion, optimizer):
 
         # forwarding
         data, target = Variable(data.cuda()), Variable(target.cuda())
+        # print("The data is", data, " \n And the target is", target)
         optimizer.zero_grad()
-        output = model(data)
-        print("the out is ", output)
-        print("the target is ", target)
+        output = model(data)        # equel to model.forward(data)
+        # print("the out is ", output, "\n the target is ", target)
 
         # backwarding
-        loss = criterion(output, target)
+        loss = criterion(output, target)    # [64,33] & [64]
         loss.backward()
 
         # restore weights

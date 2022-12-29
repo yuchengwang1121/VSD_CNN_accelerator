@@ -10,8 +10,10 @@ def get_dataset(type):
                                               tv.transforms.Resize([32,32]),
                                               tv.transforms.Normalize((.5, .5, .5), (.5, .5, .5))])
     dataset = tv.datasets.ImageFolder(train_path, transform=transform_img)
+    testeset = tv.datasets.ImageFolder(test_path, transform=transform_img)
     train_set_size = int(len(dataset) * 0.85)
     valid_set_size = len(dataset) - train_set_size
+    # print(dataset.class_to_idx)
 
     # split dataset into train & valid ImgFolder (5306 & 1327)
     trainset, validset = random_split(dataset, (train_set_size, valid_set_size))
@@ -21,4 +23,4 @@ def get_dataset(type):
     elif(type == 'valid'):
         return validset
     else:
-        return tv.datasets.ImageFolder(test_path, transform=transform_img)
+        return testeset
