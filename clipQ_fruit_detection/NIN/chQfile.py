@@ -10,11 +10,15 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 def ch_fileW8(input, name, frag_bit):
     x = input.clone().cpu()
     k = x.transpose(1, 0).transpose(2, 1)
-    if(k.size(2) % 4 != 0):
-        ze = torch.zeros(k.size(0), k.size(1), 4-k.size(2) % 4)
-        k = torch.cat((k, ze), 2)
+    # print("The k.size before", k.size())
+    # if(k.size(2) % 4 != 0):
+    #     ze = torch.zeros(k.size(0), k.size(1), 4-k.size(2) % 4)
+    #     k = torch.cat((k, ze), 2)
+    # print("The k.size after ", k.size())
     data = k.contiguous().view(-1).detach().numpy()
+    # print("The data len in ch_file8 ", len(data))
     data = data*(2.**frag_bit)
+
 
     # Change data to positive int
     for i in range(len(data)):

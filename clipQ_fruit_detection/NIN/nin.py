@@ -63,7 +63,6 @@ class QConv2d(nn.Module):
 
         if self.full == 0:
             x = NbitActive.apply(x)
-
         if self.w:
             # for write input.hex
             if not os.path.exists('./H_data/conv{:d}/In8.hex'.format(int(self.layer)-1)):
