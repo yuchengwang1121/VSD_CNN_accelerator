@@ -4,6 +4,7 @@ import torch
 
 
 def valid(full, model, bin_op, validloader, criterion, epoch, load_acc):
+    global best_acc
     model.eval()
     valid_loss = 0
     correct = 0
