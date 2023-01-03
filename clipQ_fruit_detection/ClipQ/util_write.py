@@ -178,12 +178,12 @@ class Quantize():
             # Max modified for generate mutiple layer data
             # index == the layer num-1 at nin.py
             print("The index is ", index)
-            if index == (0|3|6):
+            if index == (0||3||6):
                 print("in index 0")
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
                     ch_fileW2_kernel_3x3(ww, './H_data/conv{:d}/W2.hex'.format(int(index)))     #(input, name)
 
-            if index == (1|4):
+            if index == (1||4):
                 print("in index 1")
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
                     ch_fileW2_kernel_1x1(ww, './H_data/conv{:d}/W2.hex'.format(int(index)), 96) #(input, name, input_ch)
