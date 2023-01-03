@@ -3,11 +3,12 @@ import torch
 
 
 
-def valid(full, model, bin_op, validloader, criterion, epoch):
-    global best_acc
+def valid(full, model, bin_op, validloader, criterion, epoch, load_acc):
     model.eval()
     valid_loss = 0
     correct = 0
+    if epoch==0:
+        best_acc = load_acc
     if epoch==1:
         best_acc = 0
     if full == 0:
