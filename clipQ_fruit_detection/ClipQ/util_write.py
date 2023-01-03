@@ -66,6 +66,8 @@ class Quantize():
 
             P_max = max(pos[:P_Znum])
             N_min = min(neg[-N_Znum:])
+            pos_s = (pos[len(pos)-1] - P_max)/partb0
+            neg_s = (neg[0] - N_min)/partb1
 
             x1[pos_arg[:P_Znum]] = 0
             x1[neg_arg[-N_Znum:]] = 0
