@@ -99,7 +99,7 @@ if __name__ == '__main__':
     # do the evaluation if specified
     if args.evaluate:
         best_acc = pretrained_model['best_acc']
-        valid(full_p, bin_op, valid_loader)
+        valid(full_p, model, bin_op, valid_loader, criterion, epoch)
         exit(0)
 
     max_ep = int(args.epoch)
