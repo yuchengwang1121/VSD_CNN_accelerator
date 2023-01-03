@@ -74,7 +74,7 @@ class QConv2d(nn.Module):
             x = self.dropout(x)
 
         x = self.conv(x)
-        
+
         if self.w:
             # for write bias.hex
             if not os.path.exists('./H_data/conv{:d}/Bias32.hex'.format(int(self.layer)-1)):
@@ -121,11 +121,11 @@ class Net(nn.Module):
         super(Net, self).__init__()
         self.QCNN = nn.Sequential(
             
-            QConv2d(3, 96, kernel_size=3, stride=1,
+            QConv2d(3, 24, kernel_size=3, stride=1,
                     padding=1, layer=1, full=f, w=write),
-            QConv2d(96, 160, kernel_size=1, stride=1,
+            QConv2d(24, 40, kernel_size=1, stride=1,
                     padding=0, layer=2, full=f, w=write),
-            QConv2d(160, 33, kernel_size=1, stride=1,
+            QConv2d(40, 33, kernel_size=1, stride=1,
                     padding=0, layer=3, full=f, w=write),
             # QMaxPool2d(kernel_size=2, stride=2,
             #         padding=0, layer=1, w=write),
