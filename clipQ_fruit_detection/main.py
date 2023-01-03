@@ -89,17 +89,17 @@ if __name__ == '__main__':
     else:
         bin_op = util.Quantize(model)
 
-    best_acc = 0
+    load_acc = 0
     # predict single picture
     if args.predict:
-        best_acc = pretrained_model['best_acc']
+        load_acc = pretrained_model['best_acc']
         test(full_p,model, bin_op, test_loader)
         exit(0)
 
     # do the evaluation if specified
     if args.evaluate:
-        best_acc = pretrained_model['best_acc']
-        valid(full_p, model, bin_op, valid_loader, criterion, 1)
+        load_acc = pretrained_model['best_acc']
+        valid(full_p, model, bin_op, valid_loader, criterion, 0, load_acc)
         exit(0)
 
     max_ep = int(args.epoch)
@@ -108,5 +108,5 @@ if __name__ == '__main__':
     for epoch in range(1, max_ep):
         adjust_learning_rate(optimizer, epoch, max_ep)
         train(epoch, full_p, model, bin_op, train_loader, criterion, optimizer)
-        valid(full_p, model, bin_op, valid_loader, criterion, epoch)
+        valid(full_p, model, bin_op, valid_loader, criterion, epoch, 0)
         
