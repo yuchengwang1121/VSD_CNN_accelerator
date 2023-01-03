@@ -31,7 +31,7 @@ def valid(full, model, bin_op, validloader, criterion, epoch, load_acc):
     # print("After saving the acc is {} and the best is {}".format(acc, best_acc))
 
     valid_loss /= len(validloader.dataset)
-    print('\nThe epoch is: {}'.format(epoch))
+    # print('\nThe epoch is: {}'.format(epoch))
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
         valid_loss * 128., correct, len(validloader.dataset),
         100. * float(correct) / len(validloader.dataset)))

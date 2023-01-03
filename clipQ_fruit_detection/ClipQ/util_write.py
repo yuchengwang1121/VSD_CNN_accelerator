@@ -4,11 +4,10 @@ import numpy as np
 import math as m
 import time
 from ClipQ.Qfile import fileW8
-from ClipQ.chQfile import ch_fileW2, ch_fileW2_kernel_3x3, ch_fileW2_kernel_1x1
+from ClipQ.chQfile import ch_fileW2_kernel_3x3, ch_fileW2_kernel_1x1
 import os
 
 # for debug
-import ipdb
 import sys
 
 class Quantize():
@@ -177,25 +176,18 @@ class Quantize():
 
             # Max modified for generate mutiple layer data
             # index == the layer num-1 at nin.py
-            print("The index is ", index)
             if index == 0:
-                print("in index 0")
+                # print("in index 0")
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
                     ch_fileW2_kernel_3x3(ww, './H_data/conv{:d}/W2.hex'.format(int(index)))     #(input, name)
 
             if index == 1:
-                print("in index 1")
+                # print("in index 1")
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
                     ch_fileW2_kernel_1x1(ww, './H_data/conv{:d}/W2.hex'.format(int(index)), 96) #(input, name, input_ch)
             if index == 2:
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
                     ch_fileW2_kernel_1x1(ww, './H_data/conv{:d}/W2.hex'.format(int(index)), 160) #(input, name, input_ch)
-            if index == 5:
-                if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
-                    ch_fileW2_kernel_1x1(ww, './H_data/conv{:d}/W2.hex'.format(int(index)), 192) #(input, name, input_ch)
-            if index == 7:
-                if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
-                    ch_fileW2_kernel_1x1(ww, './H_data/conv{:d}/W2.hex'.format(int(index)), 384) #(input, name, input_ch)
 
             if not os.path.exists('./H_data/conv{:d}/W8.hex'.format(int(index))):
                 fileW8(pa, './H_data/conv{:d}/W8.hex'.format(int(index)), 5)
