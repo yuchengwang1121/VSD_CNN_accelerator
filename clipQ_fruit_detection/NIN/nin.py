@@ -74,7 +74,7 @@ class QConv2d(nn.Module):
             x = self.dropout(x)
 
         x = self.conv(x)
-
+        
         if self.w:
             # for write bias.hex
             if not os.path.exists('./H_data/conv{:d}/Bias32.hex'.format(int(self.layer)-1)):
