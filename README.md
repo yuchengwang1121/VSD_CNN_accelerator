@@ -8,3 +8,4 @@
 ```python
 python3 main.py --write # write In8, Bias32, Out8
 main.py  --write --pretrained ./NIN/nin_p.pth.tar --evaluate
+```
