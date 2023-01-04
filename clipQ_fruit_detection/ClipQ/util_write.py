@@ -179,17 +179,17 @@ class Quantize():
             if index == 0:
                 # print("in index 0")
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
-                    # os.makedirs('./H_data/conv{:d}'.format(int(index)))
+                    os.makedirs('./H_data/conv{:d}'.format(int(index)))
                     ch_fileW2_kernel_3x3(ww, './H_data/conv{:d}/W2.hex'.format(int(index)))     #(input, name)
 
             if index == 1:
                 # print("in index 1")
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
-                    # os.makedirs('./H_data/conv{:d}'.format(int(index)))
+                    os.makedirs('./H_data/conv{:d}'.format(int(index)))
                     ch_fileW2_kernel_1x1(ww, './H_data/conv{:d}/W2.hex'.format(int(index)), 96) #(input, name, input_ch)
             if index == 2:
                 if not os.path.exists('./H_data/conv{:d}/W2.hex'.format(int(index))):
-                    # os.makedirs('./H_data/conv{:d}'.format(int(index)))
+                    os.makedirs('./H_data/conv{:d}'.format(int(index)))
                     ch_fileW2_kernel_1x1(ww, './H_data/conv{:d}/W2.hex'.format(int(index)), 160) #(input, name, input_ch)
 
             if not os.path.exists('./H_data/conv{:d}/W8.hex'.format(int(index))):

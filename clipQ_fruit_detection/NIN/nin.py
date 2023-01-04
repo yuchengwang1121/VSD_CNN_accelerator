@@ -66,7 +66,6 @@ class QConv2d(nn.Module):
         if self.w:
             # for write input.hex
             if not os.path.exists('./H_data/conv{:d}/In8.hex'.format(int(self.layer)-1)):
-                os.makedirs('./H_data/conv{:d}'.format(int(self.layer)-1))
                 ch_fileW8(x[0], './H_data/conv{:d}/In8.hex'.format(int(self.layer)-1), 5)
 
         if self.dropout_ratio != 0:
