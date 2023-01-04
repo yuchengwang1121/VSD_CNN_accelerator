@@ -6,6 +6,7 @@
 
 ## Call
 ```bash
+python3 main.py # generate ./NIN/nin_p.pth.tar
 python3 main.py --write --pretrained ./NIN/nin_p.pth.tar # write In8, Bias32, Out8
 python3 main.py --write --pretrained ./NIN/nin_p.pth.tar --evaluate # writeW2, W8
 ```
