@@ -1,5 +1,4 @@
 from __future__ import print_function
-import numpy as np
 import os
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"

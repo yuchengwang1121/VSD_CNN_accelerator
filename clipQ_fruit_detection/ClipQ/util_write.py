@@ -45,7 +45,6 @@ class Quantize():
 
     def ClipQ(self):
         for index in range(self.num_of_params):
-            start = time.time()
             x = self.target_modules[index].data.cpu()
             torch.set_printoptions(threshold=sys.maxsize) # for full print ndarray
             torch.set_printoptions(profile="full")

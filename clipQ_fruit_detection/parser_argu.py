@@ -18,7 +18,7 @@ def init_parse(parser) :        # modify the argument here
     parser.add_argument('--full', action='store', default='0',
                         help='full precision or not')
     # Total epoch the model train & validate
-    parser.add_argument('--epoch', action='store', default='20',
+    parser.add_argument('--epoch', action='store', default='100',
                         help='training epoch')
     # write the model's parameter into .HEX file
     parser.add_argument('--write', action='store_true',
