@@ -121,9 +121,9 @@ class Net(nn.Module):
             
             QConv2d(3, 60, kernel_size=3, stride=1,
                     padding=1, layer=1, full=f, w=write),
-            QConv2d(60, 40, kernel_size=1, stride=1,
+            QConv2d(60, 33, kernel_size=1, stride=1,
                     padding=0, layer=2, full=f, w=write),
-            QConv2d(40, 33, kernel_size=1, stride=1,
+            QConv2d(33, 20, kernel_size=1, stride=1,
                     padding=0, layer=3, full=f, w=write),
             # QMaxPool2d(kernel_size=2, stride=2,
             #         padding=0, layer=1, w=write),
