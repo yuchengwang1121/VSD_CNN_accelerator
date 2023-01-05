@@ -1,4 +1,4 @@
-## File Structure
+# File Structure
 ### ClipQ
 * `util.py` : The ClipQ implement.
 * `util_write.py` : The ClipQ implement. And the weight files "W2, W8" is created.
@@ -26,7 +26,7 @@
 ### main_argu.py
 * The argument are initialized in this file.
 
-## How To Use
+# How To Use
 ```bash
 python3 main.py # generate ./NIN/nin_p.pth.tar
 python3 main.py --write --pretrained ./NIN/nin_p.pth.tar --evaluate # writeW2, W8, In8, Bias32, Out8
