@@ -18,4 +18,27 @@
 * To call $Make XXX$ to verify the correctly of the result
 
 # How to use
-* 
+### 1. 
+```bash
+# for verify Conv0 for example
+cd sim/conv0
+```
+### 2. 
+Copy the corrseponding `.hex` into the file then run below code to generate `.dat` & `.o` 
+```python
+python3 conv2bin.py
+```
+### 3.
+Modify the `main.c`'s W8 with the W8 in H_data
+```c
+// Load W8 into EPU
+  unsigned int w8 = 0x05FAED00;   //Modify this
+  *epu_w8_l_addr = w8;
+  *epu_w8_u_addr = w8 >> 16;
+```
+### 4.
+```bash
+# for verify Conv0 for example
+cd ../..
+make conv0
+```
