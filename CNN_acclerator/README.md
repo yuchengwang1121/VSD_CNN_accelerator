@@ -18,6 +18,7 @@
 * To call $Make XXX$ to verify the correctly of the result
 
 # How to use
+## Verify each layer of NIN
 ### 1. 
 ```bash
 # for verify Conv0 for example
@@ -42,3 +43,6 @@ Modify the `main.c`'s W8 with the W8 in H_data
 cd ../..
 make conv0
 ```
+
+## Verify entire NIN
+
