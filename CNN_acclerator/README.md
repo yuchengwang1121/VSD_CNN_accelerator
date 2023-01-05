@@ -11,7 +11,7 @@
 * `DMA` : The Direct Memory Access to move the data from DRAM into EPU.
 * `EPU` : The added unit to calculate the network layers.
 * `Interface` : The file to union the wire into interface.
-* `Others` : See the HW4's Explanation
+* `Others` : See the [HW4's Explanation](https://github.com/yuchengwang1121/VLSI-System-Design/tree/main/HW4)
 ### syn
 * The systhesis file after $Make synthesis$
 ### Make file
