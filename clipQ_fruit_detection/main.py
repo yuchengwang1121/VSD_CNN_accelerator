@@ -27,13 +27,10 @@ if __name__ == '__main__':
     test_loader = DataLoader(get_dataset("test"), batch_size=64, shuffle=True, num_workers=2)
 
     # define classes
-    classes = { 'Apple Braeburn', 'Apple Granny Smith', 'Apricot', 'Avocado', 'Banana',
-                'Blueberry', 'Cactus fruit', 'Cantaloupe', 'Cherry', 'Clementine',
-                'Corn', 'Cucumber Ripe', 'Grape Blue', 'Kiwi', 'Lemon',
-                'Limes', 'Mango', 'Onion White', 'Orange', 'Papaya',
-                'Passion Fruit', 'Peach', 'Pear', 'Pepper Green', 'Pepper Red',
-                'Pineapple', 'Plum', 'Pomegranate', 'Potato Red', 'Raspberry',
-                'Strawberry', 'Tomato', 'Watermelon'}
+    classes = { 'Apple Braeburn', 'Apricot', 'Banana','Blueberry', 'Cherry', 
+                'Cucumber Ripe', 'Grape Blue', 'Kiwi', 'Lemon', 'Limes', 
+                'Mango', 'Onion White', 'Orange', 'Passion Fruit', 'Pepper Red',
+                'Pineapple', 'Potato Red', 'Strawberry', 'Tomato', 'Watermelon'}
 
     # prepare the options
     parser = argparse.ArgumentParser()
