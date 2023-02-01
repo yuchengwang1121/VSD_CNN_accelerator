@@ -172,8 +172,7 @@ module L1C_inst (
       .CS (1'b1)
   );
 
-  /*
-// {{{
+
     logic [`DATA_BITS-1:0] L1CI_rhits;
     logic [`DATA_BITS-1:0] L1CI_rmiss;
     logic [`DATA_BITS-1:0] insts;
@@ -189,7 +188,6 @@ module L1C_inst (
             insts      <= (STATE == INIT) & core_req ? insts + 'h1 : insts;
         end
     end
-// }}}
-*/
+
 endmodule
 

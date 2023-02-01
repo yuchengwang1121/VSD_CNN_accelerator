@@ -1,0 +1,31 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs/irun.lnx8664.15.20.nc
+-RUNMODE
+/home/charlie/omgGOODonly/VSD_2023/./sim/top_tb.sv
+-INCDIR
+/home/charlie/omgGOODonly/VSD_2023/./syn
+-INCDIR
+/home/charlie/omgGOODonly/VSD_2023/./include
+-INCDIR
+/home/charlie/omgGOODonly/VSD_2023/./sim
+-DEFINE
+SYN
+-DEFINE
+conv2
+-DEFINE
+CYCLE=12.5
+-DEFINE
+MAX=90000000
+-CDSLIB
+./INCA_libs/irun.lnx8664.15.20.nc/cdsrun.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.15.20.nc/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./INCA_libs/irun.lnx8664.15.20.nc/xllibs
+-ALLOWUNBOUND

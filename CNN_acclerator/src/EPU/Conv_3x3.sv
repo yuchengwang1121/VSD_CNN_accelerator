@@ -795,37 +795,49 @@ module Conv_3x3 (
 
   always_ff @(posedge clk or negedge rstn) begin
     if (~rstn) output_wdata <= 16'b0;
-    else if ((CurrentState == write_state) & (counter == 4'h1)) begin
-      if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b0))begin
-        if (sum_0[15]) begin
+	/*
+    else if ((CurrentState == write_state) & (counter == 4'h1)) 
+	begin
+      if((~|row_counter) & (~|col_counter) & (~|cha_counter))
+	  begin
+        if (sum_0[15]) 
+		begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_0[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_0[12:5]};
         end
-      end else if (cha_counter == 10'b0)
+      end 
+	  else if (~|cha_counter)
         output_wdata <= bias_0[15:0] + partial_sum_0[0];
-      else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b1))
+      else if((~|row_counter) & (~|col_counter) & (cha_counter == 10'b1))
         output_wdata <= bias_0[15:0] + partial_sum_0[0];
       else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == (num_channel - 32'b1)))
         output_wdata <= output_rdata + partial_sum_0[0];
-      else if (cha_counter == (num_channel - 32'b1)) begin
+      else if (cha_counter == (num_channel - 32'b1)) 
+	  begin
         if (sum_0[15]) begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_0[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_0[12:5]};
         end
-      end else output_wdata <= output_rdata + partial_sum_0[0];
-    end else if ((CurrentState == write_state) & (counter == 4'h4)) begin
+      end 
+	  else output_wdata <= output_rdata + partial_sum_0[0];
+    end 
+	else if ((CurrentState == write_state) & (counter == 4'h4)) begin
       if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b0))begin
         if (sum_1[15]) begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_1[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_1[12:5]};
         end
-      end else if (cha_counter == 10'b0)
+      end 
+	  else if (cha_counter == 10'b0)
         output_wdata <= bias_1[15:0] + partial_sum_1[0];
       else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b1))
         output_wdata <= bias_1[15:0] + partial_sum_1[0];
@@ -834,20 +846,25 @@ module Conv_3x3 (
       else if (cha_counter == (num_channel - 32'b1)) begin
         if (sum_1[15]) begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_1[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_1[12:5]};
         end
-      end else output_wdata <= output_rdata + partial_sum_1[0];
-    end else if ((CurrentState == write_state) & (counter == 4'h7)) begin
+      end 
+	  else output_wdata <= output_rdata + partial_sum_1[0];
+    end 
+	else if ((CurrentState == write_state) & (counter == 4'h7)) begin
       if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b0))begin
         if (sum_2[15]) begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_2[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_2[12:5]};
         end
-      end else if (cha_counter == 10'b0)
+      end 
+	  else if (cha_counter == 10'b0)
         output_wdata <= bias_2[15:0] + partial_sum_2[0];
       else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b1))
         output_wdata <= bias_2[15:0] + partial_sum_2[0];
@@ -856,20 +873,25 @@ module Conv_3x3 (
       else if (cha_counter == (num_channel - 32'b1)) begin
         if (sum_2[15]) begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_2[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_2[12:5]};
         end
-      end else output_wdata <= output_rdata + partial_sum_2[0];
-    end else if ((CurrentState == write_state) & (counter == 4'ha)) begin
+      end 
+	  else output_wdata <= output_rdata + partial_sum_2[0];
+    end 
+	else if ((CurrentState == write_state) & (counter == 4'ha)) begin
       if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b0))begin
         if (sum_3[15]) begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_3[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_3[12:5]};
         end
-      end else if (cha_counter == 10'b0)
+      end 
+	  else if (cha_counter == 10'b0)
         output_wdata <= bias_3[15:0] + partial_sum_3[0];
       else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b1))
         output_wdata <= bias_3[15:0] + partial_sum_3[0];
@@ -878,12 +900,130 @@ module Conv_3x3 (
       else if (cha_counter == (num_channel - 32'b1)) begin
         if (sum_3[15]) begin
           output_wdata <= 16'b0;
-        end else begin
+        end 
+		else begin
           if (|sum_3[15:12]) output_wdata <= 16'h7f;
           else output_wdata <= {8'b0, sum_3[12:5]};
         end
-      end else output_wdata <= output_rdata + partial_sum_3[0];
+      end 
+	  else output_wdata <= output_rdata + partial_sum_3[0];
     end
+	*/
+	else if(CurrentState == write_state) 
+		case(counter)
+		4'h1:begin
+			if((~|row_counter) & (~|col_counter) & (~|cha_counter))
+		  begin
+			if (sum_0[15]) 
+			begin
+			  output_wdata <= 16'b0;
+			end 
+			else begin
+			  if (|sum_0[15:12]) output_wdata <= 16'h7f;
+			  else output_wdata <= {8'b0, sum_0[12:5]};
+			end
+		  end 
+		  else if (~|cha_counter)
+			output_wdata <= bias_0[15:0] + partial_sum_0[0];
+		  else if((~|row_counter) & (~|col_counter) & (cha_counter == 10'b1))
+			output_wdata <= bias_0[15:0] + partial_sum_0[0];
+		  else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == (num_channel - 32'b1)))
+			output_wdata <= output_rdata + partial_sum_0[0];
+		  else if (cha_counter == (num_channel - 32'b1)) 
+		  begin
+			if (sum_0[15]) begin
+			  output_wdata <= 16'b0;
+			end 
+			else begin
+			  if (|sum_0[15:12]) output_wdata <= 16'h7f;
+			  else output_wdata <= {8'b0, sum_0[12:5]};
+			end
+		  end 
+		  else output_wdata <= output_rdata + partial_sum_0[0];
+		end
+	    4'h4:begin
+			if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b0))begin
+        if (sum_1[15]) begin
+          output_wdata <= 16'b0;
+        end 
+		else begin
+          if (|sum_1[15:12]) output_wdata <= 16'h7f;
+          else output_wdata <= {8'b0, sum_1[12:5]};
+        end
+      end 
+	  else if (cha_counter == 10'b0)
+        output_wdata <= bias_1[15:0] + partial_sum_1[0];
+      else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b1))
+        output_wdata <= bias_1[15:0] + partial_sum_1[0];
+      else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == (num_channel - 32'b1)))
+        output_wdata <= output_rdata + partial_sum_1[0];
+      else if (cha_counter == (num_channel - 32'b1)) begin
+        if (sum_1[15]) begin
+          output_wdata <= 16'b0;
+        end 
+		else begin
+          if (|sum_1[15:12]) output_wdata <= 16'h7f;
+          else output_wdata <= {8'b0, sum_1[12:5]};
+        end
+      end 
+	  else output_wdata <= output_rdata + partial_sum_1[0];
+		end
+		4'h7:begin
+			if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b0))begin
+        if (sum_2[15]) begin
+          output_wdata <= 16'b0;
+        end 
+		else begin
+          if (|sum_2[15:12]) output_wdata <= 16'h7f;
+          else output_wdata <= {8'b0, sum_2[12:5]};
+        end
+      end 
+	  else if (cha_counter == 10'b0)
+        output_wdata <= bias_2[15:0] + partial_sum_2[0];
+      else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b1))
+        output_wdata <= bias_2[15:0] + partial_sum_2[0];
+      else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == (num_channel - 32'b1)))
+        output_wdata <= output_rdata + partial_sum_2[0];
+      else if (cha_counter == (num_channel - 32'b1)) begin
+        if (sum_2[15]) begin
+          output_wdata <= 16'b0;
+        end 
+		else begin
+          if (|sum_2[15:12]) output_wdata <= 16'h7f;
+          else output_wdata <= {8'b0, sum_2[12:5]};
+        end
+      end 
+	  else output_wdata <= output_rdata + partial_sum_2[0];
+		end
+		4'ha:begin
+		  if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b0))begin
+        if (sum_3[15]) begin
+          output_wdata <= 16'b0;
+        end 
+		else begin
+          if (|sum_3[15:12]) output_wdata <= 16'h7f;
+          else output_wdata <= {8'b0, sum_3[12:5]};
+        end
+      end 
+	  else if (cha_counter == 10'b0)
+        output_wdata <= bias_3[15:0] + partial_sum_3[0];
+      else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == 10'b1))
+        output_wdata <= bias_3[15:0] + partial_sum_3[0];
+      else if((row_counter == 5'b0) & (col_counter == 5'b0) & (cha_counter == (num_channel - 32'b1)))
+        output_wdata <= output_rdata + partial_sum_3[0];
+      else if (cha_counter == (num_channel - 32'b1)) begin
+        if (sum_3[15]) begin
+          output_wdata <= 16'b0;
+        end 
+		else begin
+          if (|sum_3[15:12]) output_wdata <= 16'h7f;
+          else output_wdata <= {8'b0, sum_3[12:5]};
+        end
+      end 
+	  else output_wdata <= output_rdata + partial_sum_3[0];
+		end
+		endcase
+		
   end
   //write output
   //*********************************************//

@@ -36,7 +36,7 @@ Program Header:
          filesz 0x00000050 memsz 0x00000050 flags rw-
     LOAD off    0x0000e020 vaddr 0x72000020 paddr 0x204039c8 align 2**12
          filesz 0x00000010 memsz 0x00000010 flags rw-
-    LOAD off    0x0000f000 vaddr 0x60000000 paddr 0x204039d8 align 2**12
+    LOAD off    0x0000f000 vaddr 0x50003000 paddr 0x204039d8 align 2**12
          filesz 0x00000050 memsz 0x00000050 flags rw-
     LOAD off    0x00010030 vaddr 0x72000030 paddr 0x20403a28 align 2**12
          filesz 0x00000010 memsz 0x00000010 flags rw-
@@ -75,7 +75,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
  14 .param_conv2_dat 00000010  72000020  204039c8  0000e020  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 15 .out8_pool0_dat 00000050  60000000  204039d8  0000f000  2**0
+ 15 .out8_pool0_dat 00000050  50003000  204039d8  0000f000  2**0
                   CONTENTS, ALLOC, LOAD, DATA
  16 .param_pool0_dat 00000010  72000030  20403a28  00010030  2**0
                   CONTENTS, ALLOC, LOAD, DATA
@@ -105,7 +105,7 @@ SYMBOL TABLE:
 7000066c l    d  .w2_conv2_dat	00000000 .w2_conv2_dat
 71000174 l    d  .bias_conv2_dat	00000000 .bias_conv2_dat
 72000020 l    d  .param_conv2_dat	00000000 .param_conv2_dat
-60000000 l    d  .out8_pool0_dat	00000000 .out8_pool0_dat
+50003000 l    d  .out8_pool0_dat	00000000 .out8_pool0_dat
 72000030 l    d  .param_pool0_dat	00000000 .param_pool0_dat
 00020030 l    d  .data1	00000000 .data1
 00020030 l    d  .bss	00000000 .bss
@@ -137,7 +137,6 @@ SYMBOL TABLE:
 204037a4 g       *ABS*	00000000 __bias_conv1_data_in_dram_start
 00020004 g     O .sbss	00000004 copy_count
 700007ac g       .w2_conv2_dat	00000000 __w2_conv2_end
-60000050 g       .out8_pool0_dat	00000000 _binary_Out8_dat_end
 00020000 g       .sbss	00000000 __sbss_start
 00020808 g       .sdata	00000000 _gp
 20400010 g       _test	00000000 _test_end
@@ -148,6 +147,7 @@ SYMBOL TABLE:
 00010000 g       .text1	00000000 _imem_start
 72000030 g       .param_conv2_dat	00000000 _binary_param_conv2_dat_end
 204039d8 g       *ABS*	00000000 __out8_pool0_data_in_dram_start
+00000050 g       *ABS*	00000000 _binary_Out8_pool0_dat_size
 20403308 g       *ABS*	00000000 __bias_conv0_data_in_dram_start
 00000010 g       *ABS*	00000000 _TEST_SIZE
 20400010 g       *ABS*	00000000 __sdata_paddr_start
@@ -157,6 +157,7 @@ SYMBOL TABLE:
 0000039c g       *ABS*	00000000 _binary_W2_conv1_dat_size
 20403408 g       *ABS*	00000000 __w2_conv1_data_in_dram_start
 00000084 g       *ABS*	00000000 _binary_Bias32_conv1_dat_size
+50003000 g       .out8_pool0_dat	00000000 _binary_Out8_pool0_dat_start
 00000140 g       *ABS*	00000000 _binary_W2_conv2_dat_size
 710000f0 g       .bias_conv0_dat	00000000 __bias_conv0_end
 71000174 g       .bias_conv1_dat	00000000 _binary_Bias32_conv1_dat_end
@@ -166,7 +167,6 @@ SYMBOL TABLE:
 20403828 g       *ABS*	00000000 __param_conv1_data_in_dram_start
 72000000 g       .param_conv0_dat	00000000 _binary_param_conv0_dat_start
 00020030 g       .bss	00000000 __bss_end
-60000000 g       .out8_pool0_dat	00000000 _binary_Out8_dat_start
 72000030 g       .param_conv2_dat	00000000 __param_conv2_end
 700007ac g       .w2_conv2_dat	00000000 _binary_W2_conv2_dat_end
 710001c4 g       .bias_conv2_dat	00000000 __bias_conv2_end
@@ -191,7 +191,6 @@ SYMBOL TABLE:
 00020024 g     O .sdata	00000004 epu_ctrl_addr
 20000000 g       .text1	00000000 _dram_i_start
 00010000 g     F .text1	00000074 cpu_move
-00000050 g       *ABS*	00000000 _binary_Out8_dat_size
 00000050 g       *ABS*	00000000 _binary_Bias32_conv2_dat_size
 204033f8 g       *ABS*	00000000 __param_conv0_data_in_dram_start
 00000010 g       *ABS*	00000000 _binary_param_pool0_dat_size
@@ -214,6 +213,7 @@ SYMBOL TABLE:
 0002000c g     O .sdata	00000004 sensor_addr
 2000048c g       .text1	00000000 _dram_i_end
 0002001c g     O .sdata	00000004 epu_bias_buff_addr
+50003050 g       .out8_pool0_dat	00000000 _binary_Out8_pool0_dat_end
 710000f0 g       .bias_conv1_dat	00000000 _binary_Bias32_conv1_dat_start
 50003000 g       .in8_conv0_dat	00000000 __in8_conv0_end
 00000010 g       *ABS*	00000000 _binary_param_conv0_dat_size
@@ -236,9 +236,9 @@ SYMBOL TABLE:
 50003000 g       .in8_conv0_dat	00000000 _binary_In8_conv0_dat_end
 00020030 g       .data1	00000000 __data_start
 700002d0 g       .w2_conv0_dat	00000000 __w2_conv0_end
-60000050 g       .out8_pool0_dat	00000000 __out8_pool0_end
+50003050 g       .out8_pool0_dat	00000000 __out8_pool0_end
 72000030 g       .param_pool0_dat	00000000 _binary_param_pool0_dat_start
-60000000 g       .out8_pool0_dat	00000000 __out8_pool0_start
+50003000 g       .out8_pool0_dat	00000000 __out8_pool0_start
 710001c4 g       .bias_conv2_dat	00000000 _binary_Bias32_conv2_dat_end
 
 
@@ -548,30 +548,30 @@ Contents of section .text1:
  102c0 b7070200 83a74702 23a0e700 73005010  ......G.#...s.P.
  102d0 b7070072 13870703 b7070072 93870702  ...r.......r....
  102e0 b307f740 93d72740 9387f7ff 2326f4fe  ...@..'@....#&..
- 102f0 8327c4fe 13860700 b7070072 93850701  .'.........r....
+ 102f0 8327c4fe 13860700 b7070072 93850700  .'.........r....
  10300 b7474020 1385879c eff05ee1 b7070070  .G@ ......^....p
  10310 1387c77a b7070070 9387c766 b307f740  ...z...p...f...@
  10320 93d72740 9387f7ff 2326f4fe 8327c4fe  ..'@....#&...'..
- 10330 13860700 b7070070 9385072d b7474020  .......p...-.G@ 
+ 10330 13860700 b7070070 93850700 b7474020  .......p.....G@ 
  10340 13858783 eff09edd b7070071 1387471c  ...........q..G.
  10350 b7070071 93874717 b307f740 93d72740  ...q..G....@..'@
  10360 9387f7ff 2326f4fe 8327c4fe 13860700  ....#&...'......
- 10370 b7070071 9385070f b7474020 13858797  ...q.....G@ ....
+ 10370 b7070071 93850700 b7474020 13858797  ...q.....G@ ....
  10380 eff0ded9 b7e7fb06 93870760 2324f4fe  ...........`#$..
  10390 b7070200 83a78702 032784fe 23a0e700  .........'..#...
  103a0 b7070200 83a7c702 032784fe 13570701  .........'...W..
  103b0 23a0e700 93072000 2322f4fe 832744fe  #..... .#"...'D.
- 103c0 93971700 13e71702 b7070200 83a74702  ..............G.
+ 103c0 93971700 13e71700 b7070200 83a74702  ..............G.
  103d0 23a0e700 73005010 b7070072 13870704  #...s.P....r....
  103e0 b7070072 93870703 b307f740 93d72740  ...r.......@..'@
  103f0 9387f7ff 2326f4fe 8327c4fe 13860700  ....#&...'......
  10400 b7070072 93850700 b7474020 138587a2  ...r.....G@ ....
  10410 eff0ded0 93074000 2322f4fe 832744fe  ......@.#"...'D.
- 10420 93971700 13e71700 b7070200 83a74702  ..............G.
- 10430 23a0e700 73005010 b7070060 13870705  #...s.P....`....
- 10440 b7070060 93870700 b307f740 93d72740  ...`.......@..'@
+ 10420 93971700 13e71702 b7070200 83a74702  ..............G.
+ 10430 23a0e700 73005010 b7370050 13870705  #...s.P..7.P....
+ 10440 b7370050 93870700 b307f740 93d72740  .7.P.......@..'@
  10450 9387f7ff 2326f4fe 8327c4fe 13860700  ....#&...'......
- 10460 b7074020 93850700 b7070060 13850700  ..@ .......`....
+ 10460 b7074020 93850700 b7070050 13850700  ..@ .......P....
  10470 eff0deca 93070000 13850700 8320c101  ............. ..
  10480 03248101 13010102 67800000           .$......g...    
 Contents of section .sdata:
@@ -1512,11 +1512,11 @@ Contents of section .bias_conv2_dat:
 Contents of section .param_conv2_dat:
  72000020 20000000 21000000 14000000 01000000   ...!...........
 Contents of section .out8_pool0_dat:
- 60000000 22000000 00000000 23000000 33000000  ".......#...3...
- 60000010 00000000 00000000 32000000 00000000  ........2.......
- 60000020 00000000 7f000000 7f000000 03000000  ................
- 60000030 00000000 00000000 00000000 7f000000  ................
- 60000040 47000000 63000000 00000000 47000000  G...c.......G...
+ 50003000 22000000 00000000 23000000 33000000  ".......#...3...
+ 50003010 00000000 00000000 32000000 00000000  ........2.......
+ 50003020 00000000 7f000000 7f000000 03000000  ................
+ 50003030 00000000 00000000 00000000 7f000000  ................
+ 50003040 47000000 63000000 00000000 47000000  G...c.......G...
 Contents of section .param_pool0_dat:
  72000030 20000000 14000000 14000000 20000000   ........... ...
 Contents of section .comment:
@@ -1786,7 +1786,7 @@ Disassembly of section .text1:
    10108:	00078793          	mv	a5,a5
    1010c:	40f707b3          	sub	a5,a4,a5
    10110:	4027d793          	srai	a5,a5,0x2
-   10114:	fff78793          	addi	a5,a5,-1 # 6fffffff <__out8_pool0_end+0xfffffaf>
+   10114:	fff78793          	addi	a5,a5,-1 # 6fffffff <__out8_pool0_end+0x1fffcfaf>
    10118:	fef42623          	sw	a5,-20(s0)
    1011c:	fec42783          	lw	a5,-20(s0)
    10120:	00078613          	mv	a2,a5
@@ -1908,7 +1908,7 @@ Disassembly of section .text1:
    102f0:	fec42783          	lw	a5,-20(s0)
    102f4:	00078613          	mv	a2,a5
    102f8:	720007b7          	lui	a5,0x72000
-   102fc:	01078593          	addi	a1,a5,16 # 72000010 <__param_conv0_end>
+   102fc:	00078593          	mv	a1,a5
    10300:	204047b7          	lui	a5,0x20404
    10304:	9c878513          	addi	a0,a5,-1592 # 204039c8 <__param_conv2_data_in_dram_start>
    10308:	e15ef0ef          	jal	ra,11c <dma_move>
@@ -1923,7 +1923,7 @@ Disassembly of section .text1:
    1032c:	fec42783          	lw	a5,-20(s0)
    10330:	00078613          	mv	a2,a5
    10334:	700007b7          	lui	a5,0x70000
-   10338:	2d078593          	addi	a1,a5,720 # 700002d0 <__w2_conv0_end>
+   10338:	00078593          	mv	a1,a5
    1033c:	204047b7          	lui	a5,0x20404
    10340:	83878513          	addi	a0,a5,-1992 # 20403838 <__w2_conv2_data_in_dram_start>
    10344:	dd9ef0ef          	jal	ra,11c <dma_move>
@@ -1938,7 +1938,7 @@ Disassembly of section .text1:
    10368:	fec42783          	lw	a5,-20(s0)
    1036c:	00078613          	mv	a2,a5
    10370:	710007b7          	lui	a5,0x71000
-   10374:	0f078593          	addi	a1,a5,240 # 710000f0 <__bias_conv0_end>
+   10374:	00078593          	mv	a1,a5
    10378:	204047b7          	lui	a5,0x20404
    1037c:	97878513          	addi	a0,a5,-1672 # 20403978 <__bias_conv2_data_in_dram_start>
    10380:	d9def0ef          	jal	ra,11c <dma_move>
@@ -1958,7 +1958,7 @@ Disassembly of section .text1:
    103b8:	fef42223          	sw	a5,-28(s0)
    103bc:	fe442783          	lw	a5,-28(s0)
    103c0:	00179793          	slli	a5,a5,0x1
-   103c4:	0217e713          	ori	a4,a5,33
+   103c4:	0017e713          	ori	a4,a5,1
    103c8:	000207b7          	lui	a5,0x20
    103cc:	0247a783          	lw	a5,36(a5) # 20024 <epu_ctrl_addr>
    103d0:	00e7a023          	sw	a4,0(a5)
@@ -1982,24 +1982,24 @@ Disassembly of section .text1:
    10418:	fef42223          	sw	a5,-28(s0)
    1041c:	fe442783          	lw	a5,-28(s0)
    10420:	00179793          	slli	a5,a5,0x1
-   10424:	0017e713          	ori	a4,a5,1
+   10424:	0217e713          	ori	a4,a5,33
    10428:	000207b7          	lui	a5,0x20
    1042c:	0247a783          	lw	a5,36(a5) # 20024 <epu_ctrl_addr>
    10430:	00e7a023          	sw	a4,0(a5)
    10434:	10500073          	wfi
-   10438:	600007b7          	lui	a5,0x60000
-   1043c:	05078713          	addi	a4,a5,80 # 60000050 <__out8_pool0_end>
-   10440:	600007b7          	lui	a5,0x60000
+   10438:	500037b7          	lui	a5,0x50003
+   1043c:	05078713          	addi	a4,a5,80 # 50003050 <__out8_pool0_end>
+   10440:	500037b7          	lui	a5,0x50003
    10444:	00078793          	mv	a5,a5
    10448:	40f707b3          	sub	a5,a4,a5
    1044c:	4027d793          	srai	a5,a5,0x2
-   10450:	fff78793          	addi	a5,a5,-1 # 5fffffff <__in8_conv0_end+0xfffcfff>
+   10450:	fff78793          	addi	a5,a5,-1 # 50002fff <__in8_conv0_start+0x2fff>
    10454:	fef42623          	sw	a5,-20(s0)
    10458:	fec42783          	lw	a5,-20(s0)
    1045c:	00078613          	mv	a2,a5
    10460:	204007b7          	lui	a5,0x20400
    10464:	00078593          	mv	a1,a5
-   10468:	600007b7          	lui	a5,0x60000
+   10468:	500007b7          	lui	a5,0x50000
    1046c:	00078513          	mv	a0,a5
    10470:	cadef0ef          	jal	ra,11c <dma_move>
    10474:	00000793          	li	a5,0

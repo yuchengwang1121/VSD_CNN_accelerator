@@ -1,0 +1,489 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: T-2022.03
+Date   : Mon Jan  9 02:33:05 2023
+****************************************
+
+Library(s) Used:
+
+    fsa0m_a_generic_core_ss1p62v125c (File: /usr/cad/CBDK/CBDK018_UMC_Faraday_v1.0/orig_lib/fsa0m_a/2009Q2v2.0/GENERIC_CORE/FrontEnd/synopsys/fsa0m_a_generic_core_ss1p62v125c.db)
+    SUMA180_384X32X1BM4_BC (File: /home/charlie/omgGOODonly/VSD_2021/sim/Bias_SRAM/SUMA180_384X32X1BM4_BC.db)
+    SUMA180_16384X18X1BM4_BC (File: /home/charlie/omgGOODonly/VSD_2021/sim/Weight_SRAM/SUMA180_16384X18X1BM4_BC.db)
+    SUMA180_32768X16X1BM8_BC (File: /home/charlie/omgGOODonly/VSD_2021/sim/InOut_SRAM/SUMA180_32768X16X1BM8_BC.db)
+    SRAM_WC (File: /home/charlie/omgGOODonly/VSD_2021/sim/SRAM/SRAM_WC.db)
+    tag_array_WC (File: /home/charlie/omgGOODonly/VSD_2021/sim/tag_array/tag_array_WC.db)
+    data_array_WC (File: /home/charlie/omgGOODonly/VSD_2021/sim/data_array/data_array_WC.db)
+
+Number of ports:                        26843
+Number of nets:                         77652
+Number of cells:                        49071
+Number of combinational cells:          41084
+Number of sequential cells:              7703
+Number of macros/black boxes:              24
+Number of buf/inv:                       9891
+Number of references:                      14
+
+Combinational area:             863097.881670
+Buf/Inv area:                   104046.464506
+Noncombinational area:          456120.810250
+Macro/Black Box area:         46289441.867188
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:              47608660.559108
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area                    Local cell area
+                                  ----------------------  --------------------------------------- 
+Hierarchical cell                 Absolute       Percent  Combi-       Noncombi-    Black-
+                                  Total          Total    national     national     boxes          Design
+--------------------------------  -------------  -------  -----------  -----------  -------------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+top                               47608660.5591    100.0      53.1216      65.6208         0.0000  top
+AXI                                  25135.8911      0.1      93.7440       0.0000         0.0000  AXI_I_axi2m0_i_inf_Master_AXI2Min_I_axi2m0_o_inf_Master_AXI2Mout_I_axi2m1_i_inf_Master_AXI2Min_I_axi2m1_o_inf_Master_AXI2Mout_I_axi2m2_i_inf_Master_AXI2Min_I_axi2m2_o_inf_Master_AXI2Mout_I_axi2s0_i_inf_Slave_AXI2Sin_I_axi2s0_o_inf_Slave_AXI2Sout_I_axi2s1_i_inf_Slave_AXI2Sin_I_axi2s1_o_inf_Slave_AXI2Sout_I_axi2s2_i_inf_Slave_AXI2Sin_I_axi2s2_o_inf_Slave_AXI2Sout_I_axi2s3_i_inf_Slave_AXI2Sin_I_axi2s3_o_inf_Slave_AXI2Sout_I_axi2s4_i_inf_Slave_AXI2Sin_I_axi2s4_o_inf_Slave_AXI2Sout_I_axi2s5_i_inf_Slave_AXI2Sin_I_axi2s5_o_inf_Slave_AXI2Sout_I_axi2s6_i_inf_Slave_AXI2Sin_I_axi2s6_o_inf_Slave_AXI2Sout_
+AXI/i_ar                              4284.1007      0.0    1190.5488       0.0000         0.0000  AR_ch
+AXI/i_ar/ar_arbiter                   1949.8752      0.0    1949.8752       0.0000         0.0000  Arbiter_1
+AXI/i_ar/ar_decoder                   1143.6768      0.0    1143.6768       0.0000         0.0000  Decoder_1
+AXI/i_aw                              4499.7119      0.0    1053.0576       0.0000         0.0000  AW_ch
+AXI/i_aw/aw_arbiter                   1977.9984      0.0    1977.9984       0.0000         0.0000  Arbiter_0
+AXI/i_aw/aw_decoder                   1468.6560      0.0    1468.6560       0.0000         0.0000  Decoder_0
+AXI/i_b                               1721.7648      0.0    1721.7648       0.0000         0.0000  B_ch
+AXI/i_r                               7908.8688      0.0    7433.8992     474.9696         0.0000  R_ch
+AXI/i_slave                           3234.1680      0.0    1353.0384    1603.0224         0.0000  DefaultSlave
+AXI/i_slave/r379                       278.1072      0.0     278.1072       0.0000         0.0000  DefaultSlave_DW01_inc_0_DW01_inc_50
+AXI/i_w                               3393.5328      0.0    2918.5632     474.9696         0.0000  W_ch
+DM1                                2681471.6596      5.6    4340.3472    3562.2720   2672247.2500  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__0
+DM1/add_149_S2                         521.8416      0.0     521.8416       0.0000         0.0000  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__0_DW01_inc_1_DW01_inc_42
+DM1/add_151_S2                         521.8416      0.0     521.8416       0.0000         0.0000  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__0_DW01_inc_0_DW01_inc_41
+DM1/r395                               278.1072      0.0     278.1072       0.0000         0.0000  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__0_DW01_inc_2_DW01_inc_43
+IM1                                2681699.7700      5.6    4568.4576    3562.2720   2672247.2500  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__1
+IM1/add_149_S2                         521.8416      0.0     521.8416       0.0000         0.0000  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__1_DW01_inc_1_DW01_inc_45
+IM1/add_151_S2                         521.8416      0.0     521.8416       0.0000         0.0000  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__1_DW01_inc_0_DW01_inc_44
+IM1/r395                               278.1072      0.0     278.1072       0.0000         0.0000  SRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__1_DW01_inc_2_DW01_inc_46
+cpu_wrapper                        1036185.3549      2.2      56.2464      59.3712         0.0000  CPU_wrapper_I_m02axi_i_inf_Master_M2AXIin_I_m02axi_o_inf_Master_M2AXIout_I_m12axi_i_inf_Master_M2AXIin_I_m12axi_o_inf_Master_M2AXIout_
+cpu_wrapper/L1CD                    399431.5218      0.8   20320.5743   21754.8577         0.0000  L1C_data
+cpu_wrapper/L1CD/DA                 295909.3125      0.6       0.0000       0.0000    295909.3125  data_array_wrapper_0
+cpu_wrapper/L1CD/TA                  61446.7773      0.1       0.0000       0.0000     61446.7773  tag_array_wrapper_0
+cpu_wrapper/L1CI                    388591.5907      0.8   14742.8064   16492.6945         0.0000  L1C_inst
+cpu_wrapper/L1CI/DA                 295909.3125      0.6       0.0000       0.0000    295909.3125  data_array_wrapper_1
+cpu_wrapper/L1CI/TA                  61446.7773      0.1       0.0000       0.0000     61446.7773  tag_array_wrapper_1
+cpu_wrapper/M0                        1087.4304      0.0     553.0896     534.3408         0.0000  Master_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout__1
+cpu_wrapper/M1                        1221.7968      0.0     681.2064     540.5904         0.0000  Master_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout__0
+cpu_wrapper/i_CPU                   245737.3976      0.5     121.8672     124.9920         0.0000  CPU
+cpu_wrapper/i_CPU/i_csr              23298.5087      0.0    6846.4368    9914.9905         0.0000  CSR_I_csr2ex_inf_EX_CSR_CSR2EX_
+cpu_wrapper/i_CPU/i_csr/add_123       2684.2031      0.0    2684.2031       0.0000         0.0000  CSR_I_csr2ex_inf_EX_CSR_CSR2EX__DW01_inc_2
+cpu_wrapper/i_CPU/i_csr/add_124       2684.2031      0.0    2684.2031       0.0000         0.0000  CSR_I_csr2ex_inf_EX_CSR_CSR2EX__DW01_inc_J15_0
+cpu_wrapper/i_CPU/i_csr/add_93        1168.6752      0.0    1168.6752       0.0000         0.0000  CSR_I_csr2ex_inf_EX_CSR_CSR2EX__DW01_add_0_DW01_add_23
+cpu_wrapper/i_CPU/i_exe              60111.7775      0.1   37175.7455    6474.5857         0.0000  EXE_S_I_ex2id_i_inf_ID_EX_EX2ID_I_ex2mem_o_inf_EX_MEM_EX2MEM_I_ex2csr_inf_EX_CSR_EX2CSR_
+cpu_wrapper/i_CPU/i_exe/add_135       3815.3808      0.0    3815.3808       0.0000         0.0000  EXE_S_I_ex2id_i_inf_ID_EX_EX2ID_I_ex2mem_o_inf_EX_MEM_EX2MEM_I_ex2csr_inf_EX_CSR_EX2CSR__DW01_add_J4_0
+cpu_wrapper/i_CPU/i_exe/add_40        3187.2960      0.0    3187.2960       0.0000         0.0000  EXE_S_I_ex2id_i_inf_ID_EX_EX2ID_I_ex2mem_o_inf_EX_MEM_EX2MEM_I_ex2csr_inf_EX_CSR_EX2CSR__DW01_add_J5_0
+cpu_wrapper/i_CPU/i_exe/add_41        1168.6752      0.0    1168.6752       0.0000         0.0000  EXE_S_I_ex2id_i_inf_ID_EX_EX2ID_I_ex2mem_o_inf_EX_MEM_EX2MEM_I_ex2csr_inf_EX_CSR_EX2CSR__DW01_add_1_DW01_add_25
+cpu_wrapper/i_CPU/i_exe/r404          1693.6416      0.0    1693.6416       0.0000         0.0000  EXE_S_I_ex2id_i_inf_ID_EX_EX2ID_I_ex2mem_o_inf_EX_MEM_EX2MEM_I_ex2csr_inf_EX_CSR_EX2CSR__DW01_cmp2_J2_0
+cpu_wrapper/i_CPU/i_exe/r405          2899.8144      0.0    2899.8144       0.0000         0.0000  EXE_S_I_ex2id_i_inf_ID_EX_EX2ID_I_ex2mem_o_inf_EX_MEM_EX2MEM_I_ex2csr_inf_EX_CSR_EX2CSR__DW01_cmp6_J6_0
+cpu_wrapper/i_CPU/i_exe/sub_136       3696.6384      0.0    3696.6384       0.0000         0.0000  EXE_S_I_ex2id_i_inf_ID_EX_EX2ID_I_ex2mem_o_inf_EX_MEM_EX2MEM_I_ex2csr_inf_EX_CSR_EX2CSR__DW01_sub_J3_0
+cpu_wrapper/i_CPU/i_forward            984.3120      0.0     984.3120       0.0000         0.0000  Forward
+cpu_wrapper/i_CPU/i_hazard             434.3472      0.0     434.3472       0.0000         0.0000  Hazard
+cpu_wrapper/i_CPU/i_id               21317.3857      0.0    8296.3440   13021.0417         0.0000  ID_S_I_id2if_i_inf_IF_ID_ID2IF_I_id2ex_o_inf_ID_EX_ID2EX_
+cpu_wrapper/i_CPU/i_if               11449.2672      0.0    4577.8319    5699.6353         0.0000  IF_S_I_if2id_o_inf_IF_ID_IF2ID_
+cpu_wrapper/i_CPU/i_if/add_23         1171.8000      0.0    1171.8000       0.0000         0.0000  IF_S_I_if2id_o_inf_IF_ID_IF2ID__DW01_add_0_DW01_add_27
+cpu_wrapper/i_CPU/i_mem              10080.6048      0.0    5862.1248    4218.4800         0.0000  MEM_S_I_mem2ex_i_inf_EX_MEM_MEM2EX_I_mem2wb_o_inf_MEM_WB_MEM2WB_
+cpu_wrapper/i_CPU/i_plic               599.9616      0.0     303.1056     296.8560         0.0000  PLIC
+cpu_wrapper/i_CPU/i_regfile         116364.4280      0.2   57468.1971   58896.2310         0.0000  RegFile
+cpu_wrapper/i_CPU/i_wb                 849.9456      0.0     849.9456       0.0000         0.0000  WB_S_I_wb2mem_i_inf_MEM_WB_WB2MEM_
+dram_wrapper                         27926.3376      0.1    7649.5103    5877.7489         0.0000  DRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout_
+dram_wrapper/add_127                   278.1072      0.0     278.1072       0.0000         0.0000  DRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_1_DW01_inc_36
+dram_wrapper/add_215_S2                399.9744      0.0     399.9744       0.0000         0.0000  DRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_0_DW01_inc_35
+dram_wrapper/i_fifo                  13321.0225      0.0    5359.0320    7961.9905         0.0000  FIFO_FIFO_DEPTH2_1
+dram_wrapper/r418                      399.9744      0.0     399.9744       0.0000         0.0000  DRAM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_2_DW01_inc_37
+epu_wrapper                       40897939.3266     85.9   12833.5536    7283.9088         0.0000  EPU_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout_
+epu_wrapper/add_185                   2699.8272      0.0    2699.8272       0.0000         0.0000  EPU_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_add_0_DW01_add_5
+epu_wrapper/add_193                    296.8560      0.0     296.8560       0.0000         0.0000  EPU_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_0_DW01_inc_5
+epu_wrapper/i_Bias_wrapper          320062.0973      0.7    3184.1712     178.1136         0.0000  Bias_wrapper_I_epuin_i_inf_EPUIN_EPUin_I_bus2EPU_sp_ram_intf__
+epu_wrapper/i_Bias_wrapper/i_Bias_SRAM_2k
+                                    316699.8125      0.7       0.0000       0.0000         0.0000  Bias_SRAM_2k_I_mem_sp_ram_intf__
+epu_wrapper/i_Bias_wrapper/i_Bias_SRAM_2k/i_SRAM_32b_384w_2k
+                                    316699.8125      0.7       0.0000       0.0000    316699.8125  SRAM_32b_384w_2k
+epu_wrapper/i_ConvAcc_wrapper       584900.0640      1.2      74.9952       0.0000         0.0000  ConvAcc_wrapper_I_epuin_i_inf_EPUIN_EPUin_I_param_intf_sp_ram_intf__I_bias_intf_sp_ram_intf__I_weight_intf_sp_ram_intf__I_input_intf_sp_ram_intf__I_output_intf_sp_ram_intf__
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc
+                                    584825.0688      1.2     131.2416       0.0000         0.0000  ConvAcc_I_param_intf_sp_ram_intf_compute_I_bias_intf_sp_ram_intf_compute_I_weight_intf_sp_ram_intf_compute_I_input_intf_sp_ram_intf_compute_I_output_intf_sp_ram_intf_compute_
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1
+                                    135600.6961      0.3   27317.0015   35375.8611         0.0000  Conv_1x1_I_param_intf_sp_ram_intf__I_bias_intf_sp_ram_intf__I_weight_intf_sp_ram_intf__I_input_intf_sp_ram_intf__I_output_intf_sp_ram_intf__
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_0_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_3_DW01_add_61
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_0_root_add_452
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H1893858312158626127_DW01_inc_8_DW01_inc_54
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_1_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_4_DW01_add_62
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_235
+                                       359.3520      0.0     359.3520       0.0000         0.0000  H1893858312158626127_DW01_inc_5_DW01_inc_31
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_244_S2
+                                       399.9744      0.0     399.9744       0.0000         0.0000  H1893858312158626127_DW01_inc_4_DW01_inc_30
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_256
+                                      1246.7952      0.0    1246.7952       0.0000         0.0000  H1893858312158626127_DW01_inc_3_DW01_inc_29
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_283
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H1893858312158626127_DW01_inc_2_DW01_inc_28
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_2_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_8_DW01_add_66
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_306
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H1893858312158626127_DW01_inc_1_DW01_inc_27
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_380_S2
+                                       399.9744      0.0     399.9744       0.0000         0.0000  H1893858312158626127_DW01_inc_0_DW01_inc_26
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_393_aco
+                                      1606.1472      0.0    1606.1472       0.0000         0.0000  H1893858312158626127_DW01_add_12_DW01_add_70
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_395
+                                      1040.5584      0.0    1040.5584       0.0000         0.0000  H1893858312158626127_DW01_add_11_DW01_add_69
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_3_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_6_DW01_add_64
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_463
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_0_DW01_add_18
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_4_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_7_DW01_add_65
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_5_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_5_DW01_add_63
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_6_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_9_DW01_add_67
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/add_7_root_add_0_root_add_426_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H1893858312158626127_DW01_add_10_DW01_add_68
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_122
+                                      1199.9232      0.0    1199.9232       0.0000         0.0000  H1893858312158626127_DW_mult_uns_1_DW_mult_uns_4
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_122_2
+                                      7540.1425      0.0    7540.1425       0.0000         0.0000  H1893858312158626127_DW_mult_uns_0_DW_mult_uns_3
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_123
+                                       971.8128      0.0     971.8128       0.0000         0.0000  H1893858312158626127_DW_mult_uns_3_DW_mult_uns_6
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_124
+                                      1087.4304      0.0    1087.4304       0.0000         0.0000  H1893858312158626127_DW_mult_uns_4_DW_mult_uns_7
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_124_2
+                                      6602.7024      0.0    6602.7024       0.0000         0.0000  H1893858312158626127_DW_mult_uns_2_DW_mult_uns_5
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_416
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_8_DW_mult_tc_44
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_417
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_7_DW_mult_tc_43
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_418
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_6_DW_mult_tc_42
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_419
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_5_DW_mult_tc_41
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_420
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_4_DW_mult_tc_40
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_421
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_3_DW_mult_tc_39
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_422
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_2_DW_mult_tc_38
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_423
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_1_DW_mult_tc_37
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/mult_424
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H1893858312158626127_DW_mult_tc_0_DW_mult_tc_36
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/r661
+                                      1256.1696      0.0    1256.1696       0.0000         0.0000  H1893858312158626127_DW01_add_2_DW01_add_20
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/r702
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H1893858312158626127_DW01_inc_6_DW01_inc_32
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/sub_117
+                                       762.4512      0.0     762.4512       0.0000         0.0000  H1893858312158626127_DW01_dec_1_DW01_dec_8
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_1x1/sub_1_root_add_452
+                                      1631.1456      0.0    1631.1456       0.0000         0.0000  H1893858312158626127_DW01_sub_2_DW01_sub_11
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3
+                                    394090.4018      0.8   59818.0462   80097.9991         0.0000  Conv_3x3_I_param_intf_sp_ram_intf__I_bias_intf_sp_ram_intf__I_weight_intf_sp_ram_intf__I_input_intf_sp_ram_intf__I_output_intf_sp_ram_intf__
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_36_DW01_add_53
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_28_DW01_add_45
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_20_DW01_add_37
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_12_DW01_add_29
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_679
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_6_DW01_inc_18
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_687
+                                      1268.6688      0.0    1268.6688       0.0000         0.0000  H5976663891694824403_DW01_inc_5_DW01_inc_17
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_696
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_4_DW01_inc_16
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_705
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_3_DW01_inc_15
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_710
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_2_DW01_inc_14
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_716
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_1_DW01_inc_13
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_775
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_16
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_0_root_add_777
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_17
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_1_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_37_DW01_add_54
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_1_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_29_DW01_add_46
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_1_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_21_DW01_add_38
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_1_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_13_DW01_add_30
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_248
+                                       359.3520      0.0     359.3520       0.0000         0.0000  H5976663891694824403_DW01_inc_10_DW01_inc_22
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_268
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_9_DW01_inc_21
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_293
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_8_DW01_inc_20
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_2_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_41_DW01_add_58
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_2_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_33_DW01_add_50
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_2_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_25_DW01_add_42
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_2_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_17_DW01_add_34
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_321
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_7_DW01_inc_19
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_324
+                                      1249.9200      0.0    1249.9200       0.0000         0.0000  H5976663891694824403_DW01_add_0_DW01_add_6
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_3_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_39_DW01_add_56
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_3_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_31_DW01_add_48
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_3_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_23_DW01_add_40
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_3_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_15_DW01_add_32
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_4_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_40_DW01_add_57
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_4_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_32_DW01_add_49
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_4_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_24_DW01_add_41
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_4_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_16_DW01_add_33
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_5_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_38_DW01_add_55
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_5_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_30_DW01_add_47
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_5_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_22_DW01_add_39
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_5_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_14_DW01_add_31
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_6_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_42_DW01_add_59
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_6_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_34_DW01_add_51
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_6_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_26_DW01_add_43
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_6_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_18_DW01_add_35
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_773
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_0_DW01_inc_12
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_7_root_add_0_root_add_126_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_43_DW01_add_60
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_7_root_add_0_root_add_151_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_35_DW01_add_52
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_7_root_add_0_root_add_176_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_27_DW01_add_44
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/add_7_root_add_0_root_add_201_8
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_19_DW01_add_36
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_116
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_32
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_117
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_0
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_118
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_4
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_119
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_8
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_120
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_12
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_121
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_16
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_122
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_20
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_123
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_24
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_124
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_28
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_141
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_33
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_142
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_1
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_143
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_5
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_144
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_9
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_145
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_13
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_146
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_17
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_147
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_21
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_148
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_25
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_149
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_29
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_166
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_34
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_167
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_2
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_168
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_6
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_169
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_10
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_170
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_14
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_171
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_18
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_172
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_22
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_173
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_26
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_174
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_30
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_191
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_35
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_192
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_3
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_193
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_7
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_194
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_11
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_195
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_15
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_196
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_19
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_197
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_23
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_198
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_27
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_199
+                                      3715.3872      0.0    3715.3872       0.0000         0.0000  H5976663891694824403_DW_mult_tc_31
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_672
+                                     17195.7744      0.0   17195.7744       0.0000         0.0000  H5976663891694824403_DW_mult_uns_5
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_777
+                                      2431.0944      0.0    2431.0944       0.0000         0.0000  H5976663891694824403_DW_mult_uns_4
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/mult_90
+                                     17367.6385      0.0   17367.6385       0.0000         0.0000  H5976663891694824403_DW_mult_uns_3
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1277
+                                      1718.6400      0.0    1718.6400       0.0000         0.0000  H5976663891694824403_DW01_add_11_DW01_add_17
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1278
+                                      1565.5248      0.0    1565.5248       0.0000         0.0000  H5976663891694824403_DW01_add_10_DW01_add_16
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1279
+                                      1724.8896      0.0    1724.8896       0.0000         0.0000  H5976663891694824403_DW01_add_9_DW01_add_15
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1280
+                                      1784.2608      0.0    1784.2608       0.0000         0.0000  H5976663891694824403_DW01_add_8_DW01_add_14
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1351
+                                      1553.0256      0.0    1553.0256       0.0000         0.0000  H5976663891694824403_DW01_dec_3_DW01_dec_5
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1354
+                                      1374.9120      0.0    1374.9120       0.0000         0.0000  H5976663891694824403_DW01_dec_1_DW01_dec_3
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1358
+                                      1512.4032      0.0    1512.4032       0.0000         0.0000  H5976663891694824403_DW01_dec_2_DW01_dec_4
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1370
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H5976663891694824403_DW01_inc_13_DW01_inc_25
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1371
+                                      2943.5616      0.0    2943.5616       0.0000         0.0000  H5976663891694824403_DW01_add_7_DW01_add_13
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1372
+                                      1287.4176      0.0    1287.4176       0.0000         0.0000  H5976663891694824403_DW01_dec_0_DW01_dec_2
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1373
+                                      3490.4016      0.0    3490.4016       0.0000         0.0000  H5976663891694824403_DW01_sub_3
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1376
+                                      2784.1969      0.0    2784.1969       0.0000         0.0000  H5976663891694824403_DW01_sub_2
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1381
+                                      2706.0768      0.0    2706.0768       0.0000         0.0000  H5976663891694824403_DW01_add_44
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1388
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_5_DW01_add_11
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1389
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_4_DW01_add_10
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1390
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_3_DW01_add_9
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/r1391
+                                       928.0656      0.0     928.0656       0.0000         0.0000  H5976663891694824403_DW01_add_2_DW01_add_8
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/sub_1_root_add_775
+                                      2568.5856      0.0    2568.5856       0.0000         0.0000  H5976663891694824403_DW01_sub_6
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/sub_1_root_add_777
+                                      2784.1968      0.0    2784.1968       0.0000         0.0000  H5976663891694824403_DW01_sub_7
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/sub_255
+                                      1171.8000      0.0    1171.8000       0.0000         0.0000  H5976663891694824403_DW01_sub_1
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_3x3/sub_322
+                                      1131.1776      0.0    1131.1776       0.0000         0.0000  H5976663891694824403_DW01_sub_0
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Conv_bus_switcher
+                                     19748.7357      0.0   19748.7357       0.0000         0.0000  Conv_bus_switcher_I_param_o_sp_ram_intf_compute_I_bias_o_sp_ram_intf_compute_I_weight_o_sp_ram_intf_compute_I_input_o_sp_ram_intf_compute_I_output_o_sp_ram_intf_compute_I_param_conv_3x3_i_sp_ram_intf__I_bias_conv_3x3_i_sp_ram_intf__I_weight_conv_3x3_i_sp_ram_intf__I_input_conv_3x3_i_sp_ram_intf__I_output_conv_3x3_i_sp_ram_intf__I_param_conv_1x1_i_sp_ram_intf__I_bias_conv_1x1_i_sp_ram_intf__I_weight_conv_1x1_i_sp_ram_intf__I_input_conv_1x1_i_sp_ram_intf__I_output_conv_1x1_i_sp_ram_intf__I_param_maxpool_i_sp_ram_intf__I_bias_maxpool_i_sp_ram_intf__I_weight_maxpool_i_sp_ram_intf__I_input_maxpool_i_sp_ram_intf__I_output_maxpool_i_sp_ram_intf__
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool
+                                     35253.9935      0.1    8952.5520   10108.7281         0.0000  Max_pool_I_param_intf_sp_ram_intf__I_bias_intf_sp_ram_intf__I_weight_intf_sp_ram_intf__I_input_intf_sp_ram_intf__I_output_intf_sp_ram_intf__
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/add_0_root_add_127
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H2076229901952226175_DW01_inc_5_DW01_inc_51
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/add_0_root_sub_0_root_sub_122
+                                      2634.2065      0.0    2634.2065       0.0000         0.0000  H2076229901952226175_DW01_add_0_DW01_add_28
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/add_165
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H2076229901952226175_DW01_inc_0_DW01_inc_7
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/add_94
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H2076229901952226175_DW01_inc_1_DW01_inc_8
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/mult_38
+                                      1049.9328      0.0    1049.9328       0.0000         0.0000  H2076229901952226175_DW_mult_uns_1
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/mult_38_2
+                                      5027.8032      0.0    5027.8032       0.0000         0.0000  H2076229901952226175_DW_mult_uns_0
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/r503
+                                       399.9744      0.0     399.9744       0.0000         0.0000  H2076229901952226175_DW01_inc_4_DW01_inc_11
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/r509
+                                      1253.0448      0.0    1253.0448       0.0000         0.0000  H2076229901952226175_DW01_inc_3_DW01_inc_10
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/sub_197
+                                       653.0832      0.0     653.0832       0.0000         0.0000  H2076229901952226175_DW01_dec_0
+epu_wrapper/i_ConvAcc_wrapper/i_ConvAcc/i_Max_pool/sub_1_root_add_127
+                                      1415.5344      0.0    1415.5344       0.0000         0.0000  H2076229901952226175_DW01_sub_0_DW01_sub_8
+epu_wrapper/i_InOut_switcher          9486.8929      0.0    9486.8929       0.0000         0.0000  InOut_switcher_I_from_in_buff_i_sp_ram_intf__I_from_out_buff_i_sp_ram_intf__I_to_EPU_in_buff_o_sp_ram_intf__I_to_EPU_out_buff_o_sp_ram_intf__
+epu_wrapper/i_Input_wrapper       16035700.6511     33.7    3987.2448     203.1120         0.0000  Input_wrapper_I_epuin_i_inf_EPUIN_EPUin_I_bus2EPU_sp_ram_intf__
+epu_wrapper/i_Input_wrapper/i_Input_SRAM_384k
+                                  16031510.2944     33.7    3024.8064     187.4880         0.0000  InOut_SRAM_384k_I_mem_sp_ram_intf___1
+epu_wrapper/i_Input_wrapper/i_Input_SRAM_384k/SRAM_blk_0__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_11
+epu_wrapper/i_Input_wrapper/i_Input_SRAM_384k/SRAM_blk_1__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_10
+epu_wrapper/i_Input_wrapper/i_Input_SRAM_384k/SRAM_blk_2__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_9
+epu_wrapper/i_Input_wrapper/i_Input_SRAM_384k/SRAM_blk_3__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_8
+epu_wrapper/i_Input_wrapper/i_Input_SRAM_384k/SRAM_blk_4__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_7
+epu_wrapper/i_Input_wrapper/i_Input_SRAM_384k/SRAM_blk_5__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_6
+epu_wrapper/i_Output_wrapper      16036272.4896     33.7    4459.0896     193.7376         0.0000  Output_wrapper_I_epuin_i_inf_EPUIN_EPUin_I_bus2EPU_sp_ram_intf__
+epu_wrapper/i_Output_wrapper/i_Output_SRAM_384k
+                                  16031619.6624     33.7    3134.1744     187.4880         0.0000  InOut_SRAM_384k_I_mem_sp_ram_intf___0
+epu_wrapper/i_Output_wrapper/i_Output_SRAM_384k/SRAM_blk_0__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_5
+epu_wrapper/i_Output_wrapper/i_Output_SRAM_384k/SRAM_blk_1__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_4
+epu_wrapper/i_Output_wrapper/i_Output_SRAM_384k/SRAM_blk_2__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_3
+epu_wrapper/i_Output_wrapper/i_Output_SRAM_384k/SRAM_blk_3__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_2
+epu_wrapper/i_Output_wrapper/i_Output_SRAM_384k/SRAM_blk_4__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_1
+epu_wrapper/i_Output_wrapper/i_Output_SRAM_384k/SRAM_blk_5__i_SRAM_16b_32768w_64k
+                                   2671383.0000      5.6       0.0000       0.0000   2671383.0000  SRAM_16b_32768w_64k_0
+epu_wrapper/i_Param_wrapper          24020.3377      0.1    3012.3072     178.1136         0.0000  Param_wrapper_I_epuin_i_inf_EPUIN_EPUin_I_bus2EPU_sp_ram_intf__
+epu_wrapper/i_Param_wrapper/i_Param_SRAM_16B
+                                     20829.9169      0.0    8930.6784   11899.2385         0.0000  Param_SRAM_16B_I_mem_sp_ram_intf__
+epu_wrapper/i_Weight_wrapper       7864085.7925     16.5    4562.2079     178.1136         0.0000  Weight_wrapper_I_epuin_i_inf_EPUIN_EPUin_I_bus2EPU_sp_ram_intf__
+epu_wrapper/i_Weight_wrapper/i_Weight_SRAM_180k
+                                   7859345.4710     16.5    1828.0080     578.0880         0.0000  Weight_SRAM_180k_I_mem_sp_ram_intf__
+epu_wrapper/i_Weight_wrapper/i_Weight_SRAM_180k/SRAM_blk_0__i_SRAM_18b_16384w_36k
+                                   1571387.8750      3.3       0.0000       0.0000   1571387.8750  SRAM_18b_16384w_36k_4
+epu_wrapper/i_Weight_wrapper/i_Weight_SRAM_180k/SRAM_blk_1__i_SRAM_18b_16384w_36k
+                                   1571387.8750      3.3       0.0000       0.0000   1571387.8750  SRAM_18b_16384w_36k_3
+epu_wrapper/i_Weight_wrapper/i_Weight_SRAM_180k/SRAM_blk_2__i_SRAM_18b_16384w_36k
+                                   1571387.8750      3.3       0.0000       0.0000   1571387.8750  SRAM_18b_16384w_36k_2
+epu_wrapper/i_Weight_wrapper/i_Weight_SRAM_180k/SRAM_blk_3__i_SRAM_18b_16384w_36k
+                                   1571387.8750      3.3       0.0000       0.0000   1571387.8750  SRAM_18b_16384w_36k_1
+epu_wrapper/i_Weight_wrapper/i_Weight_SRAM_180k/SRAM_blk_4__i_SRAM_18b_16384w_36k
+                                   1571387.8750      3.3       0.0000       0.0000   1571387.8750  SRAM_18b_16384w_36k_0
+epu_wrapper/r393                       296.8560      0.0     296.8560       0.0000         0.0000  EPU_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_1_DW01_inc_6
+i_dma                                40259.9233      0.1     103.1184       0.0000         0.0000  DMA_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout_
+i_dma/dma_m                          30451.1760      0.1    6480.8351    7083.9217         0.0000  DMA_master_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout_
+i_dma/dma_m/add_101                    843.6960      0.0     843.6960       0.0000         0.0000  DMA_master_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout__DW01_add_1_DW01_add_22
+i_dma/dma_m/add_102                    843.6960      0.0     843.6960       0.0000         0.0000  DMA_master_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout__DW01_add_0_DW01_add_21
+i_dma/dma_m/add_167_S2                 278.1072      0.0     278.1072       0.0000         0.0000  DMA_master_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout__DW01_inc_0_DW01_inc_34
+i_dma/dma_m/i_fifo                   13455.3889      0.0    5493.3984    7961.9905         0.0000  FIFO_FIFO_DEPTH2_0
+i_dma/dma_m/sub_84_S2                 1465.5312      0.0    1465.5312       0.0000         0.0000  DMA_master_I_m2axi_i_inf_Master_M2AXIin_I_m2axi_o_inf_Master_M2AXIout__DW01_sub_0_DW01_sub_6
+i_dma/dma_s                           9705.6289      0.0    3174.7968    6530.8321         0.0000  DMA_slave_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout_
+rom_wrapper                           4193.4816      0.0    1837.3824    2077.9920         0.0000  ROM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout_
+rom_wrapper/add_37_S2                  278.1072      0.0     278.1072       0.0000         0.0000  ROM_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_0_DW01_inc_47
+sctrl_wrapper                       213730.0720      0.4    2243.6064    2196.7344         0.0000  SCtrl_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout_
+sctrl_wrapper/add_143_S2               318.7296      0.0     318.7296       0.0000         0.0000  SCtrl_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_0_DW01_inc_38
+sctrl_wrapper/r384                     278.1072      0.0     278.1072       0.0000         0.0000  SCtrl_wrapper_I_s2axi_i_inf_Slave_S2AXIin_I_s2axi_o_inf_Slave_S2AXIout__DW01_inc_1_DW01_inc_39
+sctrl_wrapper/sensor_ctrl           208692.8945      0.4   86685.0773  122007.8172         0.0000  sensor_ctrl
+--------------------------------  -------------  -------  -----------  -----------  -------------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                     863097.8817  456120.8103  46289441.8672
+
+1

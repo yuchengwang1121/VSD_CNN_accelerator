@@ -299,8 +299,7 @@ module L1C_data (
   );
   // }}}
 
-  /*
-// {{{ PA
+
     logic [`DATA_BITS-1:0] L1CD_rhits, L1CD_whits;
     logic [`DATA_BITS-1:0] L1CD_rmiss, L1CD_wmiss;
     logic [`DATA_BITS-1:0] L1CD_hits, L1CD_miss;
@@ -320,7 +319,6 @@ module L1C_data (
             L1CD_wmiss <= (STATE == WMISS) & ~D_wait ? L1CD_wmiss + 'h1 : L1CD_wmiss;
         end
     end
-// }}}
-*/
+
 endmodule
 

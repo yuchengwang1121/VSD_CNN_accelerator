@@ -152,7 +152,7 @@ int main(void) {
 
   // Send EPU control signal
   epu_mode = CONV_1x1;
-  *epu_ctrl_addr = 0x1 | (epu_mode << 1) | (0x1 << 5);
+  *epu_ctrl_addr = 0x1 | (epu_mode << 1);
   asm("wfi");
 
 /* pool0 */
@@ -162,12 +162,12 @@ int main(void) {
   
   // Send EPU control signal
   epu_mode = MAX_POOL;
-  *epu_ctrl_addr = 0x1 | (epu_mode << 1);
+  *epu_ctrl_addr = 0x1 | (epu_mode << 1)| (0x1 << 5);
   asm("wfi");
 
   // Move output data back to DRAM
   quantity = (&__out8_pool0_end - &__out8_pool0_start) - 1;
-  dma_move(&__out8_pool0_start, &_test_start, quantity);
+  dma_move(&__in8_conv0_start, &_test_start, quantity);
 
   return 0;
 }

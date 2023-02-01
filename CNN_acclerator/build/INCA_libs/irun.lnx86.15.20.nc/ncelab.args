@@ -1,0 +1,25 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
++prog_path=/home/charlie/omgGOODonly/VSD_2023/./sim/prog1
++incdir+/home/charlie/omgGOODonly/VSD_2023/./syn+/home/charlie/omgGOODonly/VSD_2023/./include+/home/charlie/omgGOODonly/VSD_2023/./sim
++define+SYN+prog1
++access+r
++ncmaxdelays
+-SDF_FILE
+/home/charlie/omgGOODonly/VSD_2023/./syn/top_syn.sdf
+-ACCESS
++r
+-MAXDELAYS
+-MESSAGES
+-XLMODE
+./INCA_libs/irun.lnx86.15.20.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx86.15.20.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx86.15.20.nc/hdl.var
+-WORK
+worklib
+-HASXLMODE

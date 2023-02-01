@@ -6,8 +6,8 @@
 // Editor:      Hong-Ming Shih (Eric)
 // Date:        2020/11/11
 //================================================
-//`ifndef DEF_SVH
-//`define DEF_SVH
+`ifndef DEF_SVH
+`define DEF_SVH
 
 // CPU
     `define DATA_BITS 32
@@ -38,4 +38,4 @@
     `define HWORD                `WRITE_LEN_BITS'b01
     `define WORD                 `WRITE_LEN_BITS'b10
 
-//`endif
+`endif

@@ -1,0 +1,20 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+/home/charlie/omgGOODonly/VSD_2023/./sim/top_tb.sv
+-sdf_file
+/home/charlie/omgGOODonly/VSD_2023/./syn/top_syn.sdf
++incdir+/home/charlie/omgGOODonly/VSD_2023/./syn+/home/charlie/omgGOODonly/VSD_2023/./include+/home/charlie/omgGOODonly/VSD_2023/./sim
++define+SYN+prog1
+-define
+CYCLE=12.5
+-define
+CYCLE2=
+-define
+CYCLE3=
+-define
+MAX=90000000
++access+r
++ncmaxdelays
++prog_path=/home/charlie/omgGOODonly/VSD_2023/./sim/prog1
