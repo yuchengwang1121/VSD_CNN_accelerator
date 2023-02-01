@@ -38,6 +38,7 @@
   * 1PE with 9 MACs
   * Relu
   * Max pooling
+
 ![image](https://user-images.githubusercontent.com/73687292/215978699-00b778bf-ae91-4a1c-adde-a5153024926e.png)
 
 ## Verification
