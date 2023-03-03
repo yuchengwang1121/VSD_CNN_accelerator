@@ -1,5 +1,4 @@
-
-## Program flow
+# Program flow
 - Assume ALL input/weight/bias data in DRAM.
 - CPU runs booting program with DMA.
 - Use DMA to move data from DRAM to EPU’s buffer.
@@ -12,7 +11,7 @@
 - If done, DMA move data from EPU to DRAM.
 - TB verify the content of DRAM.
 
-## How To Use
+# How To Use
 ### Convolution : Take conv0 for example
 1. Go into the file sim/conv0 and then copy `Bias32.hex`, `In8.hex`, `Out8.hex`, `W2.hex` into the file.
   ```shell
