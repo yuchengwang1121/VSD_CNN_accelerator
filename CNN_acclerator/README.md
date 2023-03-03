@@ -1,5 +1,3 @@
-# Full sys verification
-This testbench performs whole system simulation with both EPU and CPU. 
 
 ## Program flow
 - Assume ALL input/weight/bias data in DRAM.
@@ -14,21 +12,5 @@ This testbench performs whole system simulation with both EPU and CPU.
 - If done, DMA move data from EPU to DRAM.
 - TB verify the content of DRAM.
 
-## Command
-Use the following command to test EPU computation on mask detection NN
-- conv0 (3x3 conv)
-  ```bash=1 
-  make conv0
-  ```
-- conv1 (1x1 conv)
-  ```bash=1 
-  make conv1
-  ```
-- pool0 (32x32 max pooling)
-  ```bash=1 
-  make pool0
-  ```
-- Full simulation that computes all 3 layers above
-  ```bash=1 
-  make conv_all
-  ```
+## How To Use
+* Take conv0 for example
