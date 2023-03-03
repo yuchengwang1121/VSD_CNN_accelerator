@@ -14,3 +14,22 @@
 
 ## How To Use
 * Take conv0 for example
+1. Go into the file sim/conv0 and then copy `Bias32.hex`, `In8.hex`, `Out8.hex`, `W2.hex` into the file.
+  ```shell
+  cd sim/conv0
+  // copy the *.hex files in here
+  ```
+2. Run the below command to generate *.hex into *.dat
+  ```python
+  ```
+3. Modify the W8 with W8.hex in main.c
+  ```c
+  // Load W8 into EPU
+  unsigned int w8 = 0x05FAED00;   //Modify this line
+  *epu_w8_l_addr = w8;
+  *epu_w8_u_addr = w8 >> 16;
+  ```
+4. Run the make command to verify the convolution layer
+  ```makefile
+  make conv0
+  ```
