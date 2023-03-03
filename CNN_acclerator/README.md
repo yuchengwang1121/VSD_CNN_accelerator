@@ -13,7 +13,7 @@
 - TB verify the content of DRAM.
 
 ## How To Use
-* Convolution : Take conv0 for example
+### Convolution : Take conv0 for example
 1. Go into the file sim/conv0 and then copy `Bias32.hex`, `In8.hex`, `Out8.hex`, `W2.hex` into the file.
   ```shell
   cd sim/conv0
@@ -40,7 +40,7 @@
   ```makefile
   make conv0
   ```
-* Maxpooling : Take  pool0 for example
+### Maxpooling : Take  pool0 for example
 1. Go into the file sim/pool0 and then copy `In8.hex`, `Out8.hex`into the file.
   ```shell
   cd sim/pool0
@@ -60,5 +60,5 @@
   ```makefile
   make pool0
   ```
-* Conv_all
+### Conv_all
   
