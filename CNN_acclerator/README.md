@@ -37,7 +37,7 @@
   *epu_w8_u_addr = w8 >> 16;
   ```
 5. Run the make command to verify the convolution layer
-  ```makefile
+  ```shell
   cd ..       // back to sim file
   make conv0
   ```
