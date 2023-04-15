@@ -38,6 +38,7 @@
   ```
 5. Run the make command to verify the convolution layer
   ```makefile
+  cd ..       // back to sim file
   make conv0
   ```
 ### Maxpooling : Take  pool0 for example
