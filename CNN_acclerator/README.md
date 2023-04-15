@@ -38,7 +38,7 @@
   ```
 5. Run the make command to verify the convolution layer
   ```shell
-  cd ..       // back to sim file
+  cd ../..       // back to CNN_accelator file
   make conv0
   ```
 ### Maxpooling : Take  pool0 for example
