@@ -11,6 +11,8 @@
 - If done, DMA move data from EPU to DRAM.
 - TB verify the content of DRAM.
 
+
+!! Notice sofy link problem !!
 # How To Use
 ### Convolution : Take conv0 for example
 1. Go into the file sim/conv0 and then copy `Bias32.hex`, `In8.hex`, `Out8.hex`, `W2.hex` into the file.
