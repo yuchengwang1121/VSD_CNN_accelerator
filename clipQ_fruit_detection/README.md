@@ -28,6 +28,7 @@
 
 # How To Use
 ```bash
+# delete H_data & ./NIN/nin_p.pth.tar
 python3 main.py # generate ./NIN/nin_p.pth.tar
 python3 main.py --write --pretrained ./NIN/nin_p.pth.tar --evaluate # writeW2, W8, In8, Bias32, Out8
 ```
