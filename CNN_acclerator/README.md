@@ -23,10 +23,10 @@
   00000020    //Input size
   00000003    //Input channel
   0000003C    //Output channel
-  00000003    //Output ????
+  00000003    //Kernel Size
   ```
 3. Run the below command to generate *.hex into *.dat
-  ```python
+  ```python conv2bin.py
   ```
 4. Modify the W8 with W8.hex in main.c
   ```c
