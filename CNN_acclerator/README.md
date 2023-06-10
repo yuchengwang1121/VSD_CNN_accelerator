@@ -23,7 +23,7 @@
   ```
   00000020    //Input size
   00000003    //Input channel
-  0000003C    //Output channel
+  0000003C    //Output channel(num of kernel tuple)
   00000003    //Kernel Size
   ```
 3. Run the below command to generate *.hex into *.dat
